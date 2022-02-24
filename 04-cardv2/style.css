@@ -18,7 +18,7 @@ h1 {
 }
 
 .card {
-    width: 350px;
+    width: 22rem;
     margin: 1rem auto;
     background-color: #3E363F;
     color: var(--platinum);
