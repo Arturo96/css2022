@@ -8,6 +8,7 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    /* min-height: 200vh; */
 }
 
 .hero {
@@ -17,6 +18,7 @@ body {
     background-position: center;
     color: #4122ec;
     padding-top: 0.1px;
+    position: relative;
 }
 
 .container-text {
@@ -49,4 +51,10 @@ body {
 .hero__cta:hover {
     background-color: #fafafa;
     color: #4122ec;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
