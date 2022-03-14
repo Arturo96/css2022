@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap");
+
+:root {
+  --hero-image: url(hero.jpg);
+  --gradient: linear-gradient(120deg, #fccb90a2 0%, #d57eeba2 100%);
+  --margin-input: 1.25rem;
+  --radius: 5px;
+  --shadow-form: 5px 5px 5px #9180fc7e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  background-image: var(--gradient), var(--hero-image);
+  background-position: center;
+  background-size: cover;
+}
+
+.contact {
+  background-color: #fff;
+  margin: 5rem auto;
+  color: #222;
+  width: 420px;
+  padding: 25px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-form);
+}
+
+.contact__title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact__comments {
+  color: #ccc;
+  height: 200px;
+  resize: none;
+}
+
+.contact input,
+.contact__comments {
+  width: 100%;
+  padding: 0.85em 0.5em;
+  border: 1px solid #ccc;
+  display: block;
+  margin-bottom: var(--margin-input);
+  outline: none;
+  font-family: inherit;
+}
+
+.contact__submit {
+    background-color: #673ab7;
+    color: #fafafa;
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+}
+
+.contact__submit:hover {
+    background-color: #683ab78f;
+}
+
+.contact__submit:active {
+    background-color: #683ab7b9;
+}
