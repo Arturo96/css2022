@@ -26,7 +26,8 @@ body {
   background-color: #fff;
   margin: 5rem auto;
   color: #222;
-  width: 420px;
+  width: 90%;
+  max-width: 420px;
   padding: 25px 20px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-form);
@@ -55,22 +56,45 @@ body {
   font-family: inherit;
 }
 
+.contact__comments {
+  color: #666;
+}
+
 .contact__submit {
-    background-color: #673ab7;
-    color: #fafafa;
-    display: block;
-    width: 100%;
-    font-family: inherit;
-    padding: 10px;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
+  background-color: #673ab7;
+  color: #fafafa;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
 }
 
 .contact__submit:hover {
-    background-color: #683ab78f;
+  background-color: #683ab78f;
 }
 
 .contact__submit:active {
-    background-color: #683ab7b9;
+  background-color: #683ab7b9;
+}
+
+@media screen and (max-width: 768px) {
+
+  .contact {
+    margin-bottom: 0;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .contact__title {
+    font-size: 1.6rem;
+  }
+
+  .contact__submit {
+    font-size: .95em;
+  }
 }
