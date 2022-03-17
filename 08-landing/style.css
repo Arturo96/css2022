@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+:root {
+    --height-nav: 70px;
+    --bg-nav: #455a64;
+    --color-nav: #eee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nav {
+    height: var(--height-nav);
+    background-color: var(--bg-nav);
+    color: var(--color-nav);
+}
+
+.nav__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__link {
+    color: var(--color-nav);
+    text-decoration: none;
+    margin-left: 1.25em;
+}
+
+.hero__main {
+    height: calc(100vh - var(--height-nav));
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+}
+
+.hero__texts {
+    flex: 1;
+}
+
+.hero__picture {
+    flex: 1;
+}
+
+.hero__img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.hero__title {
+    font-size: 3em;
+}
+
+.hero__paragraph {
+    font-size: 1.5em;
+    line-height: 1.35;
+    margin: 1.5rem 0;
+}
+
+.cta {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #304ffe;
+    color: var(--color-nav);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
