@@ -8,7 +8,7 @@
     --align-title: center;
     --box-shadow: 0 0 12px rgba(0,0,0, .2);
     --bg-gradient: linear-gradient(#ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
-
+    --bg-portfolio: #FDF0D5;
 }
 
 * {
@@ -66,7 +66,7 @@ body {
 
 /* About section */
 
-.about__container {
+.about {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +79,7 @@ body {
 .title {
     font-size: 3rem;
     color: var(--color-primary);
+    text-align: var(--align-title);
 }
 
 .about__paragraph {
@@ -106,4 +107,59 @@ body {
 
 .about__picture {
     max-width: 80%;
+}
+
+/* Portafolio */
+
+.portfolio {
+    background-color: var(--bg-portfolio);
+}
+
+.portfolio__cards {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.portfolio__card {
+    width: 27%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.portfolio__img {
+    display: block;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    height: 200px;
+}
+
+.portfolio__texts {
+    padding: 2rem 1.25rem 2.25rem;
+}
+
+.portfolio__title {
+    font-size: 1.45rem;
+    text-align: center;
+    color: var(--color-secondary);
+    margin: 0;
+}
+
+.portfolio__paragraph {
+    font-weight: 300;
+    line-height: 1.35;
+    margin: 24px 0;
+}
+
+.portfolio__cta {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--color-secondary);
+    color: #fff;
+    border-radius: 30px;
 }
