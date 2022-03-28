@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 :root {
-    --padding-container: 80px 0;
+    --padding-container: 50px 0;
     --color-primary: #f77062;
     --color-secondary: #1b998b;
     --color-bg: #fafafa;
@@ -39,7 +39,7 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap-reverse;
-    height: 100vh;
+    height: 100%;
 }
 
 .hero__texts {
@@ -70,6 +70,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .about__texts {
@@ -162,4 +163,240 @@ body {
     background-color: var(--color-secondary);
     color: #fff;
     border-radius: 30px;
+}
+
+.copy {
+    background-color: var(--color-primary);
+}
+
+.title--margin {
+    color: #fff;
+    margin: 0;
+    font-size: 2.75rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.gallery__container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.gallery__img {
+    width: 30%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.languages {
+    background-color: var(--bg-portfolio);
+    padding-bottom: 50px;
+}
+
+.languages__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+.languages__img {
+    width: 20%;
+    height: 100px;
+}
+
+.contact {
+    background-color: var(--color-primary);
+}
+
+.contact__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact__texts {
+    --color-primary: #fff;
+    width: 50%;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.contact__texts a {
+    color: inherit;
+}
+
+.contact__icon.fa-brands {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 30px 30px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid;
+    border-radius: 50%;
+    line-height: 60px;
+}
+
+.contact__icon.fa-brands:hover {
+    background-color: var(--color-primary);
+    color: #f77062;
+}
+
+.contact__picture {
+    width: 45%;
+    text-align: center;
+}
+
+.contact__img {
+    display: inline-block;
+    width: 90%;
+    height: 400px;
+    margin: 0;
+}
+
+.contact__link {
+    display: inline-block;
+    margin: 0 20px 15px;
+}
+
+.contact__link:hover {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .title {
+        font-size: 2.4rem;
+    }
+    
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero__main {
+        --padding-container: 40px 0;
+        justify-content: center;
+    }
+
+    .hero__img {
+        width: 60%;
+        margin-bottom: 2rem;
+    }
+
+    .hero__picture {
+        max-width: 90%;
+    }
+
+    .hero__texts {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero__title {
+        font-size: 3.5rem;
+    }
+
+    /* About section */
+
+    .about {
+        justify-content: center;
+    }
+
+    .about__texts {
+        width: 85%;
+        text-align: center;
+
+        margin-bottom: 3rem;
+    }
+
+    .about__paragraph {
+        text-align: center;
+    }
+
+    .about__img {
+        width: 85%;
+    }
+
+    /* Portfolio */
+
+    .portfolio__card {
+        width: 45%;
+        margin-bottom: 30px;
+    }
+
+    /* Gallery */
+
+    .gallery__img {
+        width: 45%;
+    }
+
+    .languages__container {
+        justify-content: space-between;
+    }
+
+    .contact__container {
+        flex-direction: column-reverse;
+    }
+
+    .contact__picture {
+        width: 100%;
+    }
+
+    .contact__img {
+        height: auto;
+        width: 50%;
+    }
+
+    .contact__texts {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    
+    .hero__img {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .about__paragraph {
+        font-size: 1.15em;
+    }
+
+    .about__cta {
+        font-size: 1.15em;
+    }
+
+    .portfolio__card, .gallery__img {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .languages {
+        padding-bottom: 0;
+    }
+
+    .languages__img {
+        width: 40%;
+        margin-bottom: 25px;
+    }
+
+    .contact__img {
+        width: 100%;
+        max-width: 250px;
+    }
 }
