@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+:root {
+    --font: 'Inter', sans-serif;
+    --card-columns: repeat(5, 1fr);
+    --card-rows: repeat(8, 1fr);
+    --color-primary: #2658E4;
+    --color-secondary: #fff;
+    --url-img: url(img.jpg)
+}
+
+body {
+    font-family: var(--font);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 1000px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: var(--card-columns);
+    grid-template-rows: var(--card-rows);
+}
+
+.card::after {
+    content: "";
+    grid-column: 1/4;
+    grid-row: 1/-1;
+    background-image: var(--url-img);
+    background-size: cover;
+    background-position: top center;
+    width: 100%;
+    height: 100%;
+}
+
+.card__content {
+    grid-column: 3/-1;
+    grid-row: 2/-2;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 30px;
+    z-index: 1;
+}
+
+.card__title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.card__description {
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.cta {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    padding: 18px 45px;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .card::after {
+        grid-column: 1/-2;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    
+    :root {
+        --card-columns: 1fr;
+        --card-rows: 1fr 1fr;
+    }
+
+    body {
+        align-items: stretch;
+    }
+
+    .card::after {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        background-position: top left;
+    }
+
+    .card__content {
+        grid-column: 1/-1;
+        grid-row: 2/-1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta {
+        margin: auto;
+    }
+
+}
+
