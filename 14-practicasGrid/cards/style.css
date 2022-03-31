@@ -43,7 +43,14 @@ body {
     background-size: cover;
     background-position: center;
     border-radius: 10px 10px 0 0;
+}
 
+.card:nth-of-type(2) {
+    --url-img: url(2.jpg);
+}
+
+.card:nth-of-type(3) {
+    --url-img: url(3.jpg);
 }
 
 .card__container {
