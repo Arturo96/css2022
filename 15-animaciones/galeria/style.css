@@ -1,0 +1,137 @@
+:root {
+    --img-url: url(img/imagen1.jpg);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 2.25rem;
+    border-bottom: 5px solid slateblue;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-template-rows: 270px; */
+    gap: 1rem;
+}
+
+.gallery__link {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery__link::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(70, 131, 180, 0.425);
+    transform: translateY(100%);
+    transition: transform .3s;
+}
+
+.gallery__link:hover::after {
+    transform: translateY(0);
+}
+
+
+.gallery__img {
+    display: block;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.show {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.3);
+    top: 0;
+    left: 0;
+    display: flex;
+    transform: translate(100%);
+    transition: transform .5s;
+}
+
+.show:target {
+    transform: translate(0);
+}
+
+.show__container {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    background-image: var(--img-url);
+    background-size: cover;
+    background-position: center;
+}
+
+.show__close {
+    display: block;
+    text-decoration: none;
+    background-color: #333;
+    color: #fafafa;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.show__close:hover {
+    background-color: #777;
+}
+
+.show--n2 {
+    --img-url: url(img/imagen2.jpg);
+}
+
+.show--n3 {
+    --img-url: url(img/imagen3.jpg);
+}
+
+.show--n4 {
+    --img-url: url(img/imagen4.jpg);
+}
+
+.show--n5 {
+    --img-url: url(img/imagen5.jpg);
+}
+
+.show--n6 {
+    --img-url: url(img/imagen6.jpg);
+}
+
+@media screen and (max-width: 768px) {
+    .show__container {
+        height: 70%;
+    }
+}
