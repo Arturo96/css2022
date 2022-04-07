@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+
+:root {
+    --clip: circle(0 at top right);
+    --transition-modal: clip-path 1s .5s;
+    --transition-bg: transform .5s;
+    --show: scale(0);
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    display: flex;
+}
+
+.modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    clip-path: var(--clip);
+    transition: var(--transition-modal);
+}
+
+.modal:target {
+    --clip: circle(150% at top right);
+    --show: scale(1);
+    --transition-modal: clip-path 1s;
+    --transition-bg: transform .5s 1s;
+}
+
+.modal__container {
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    min-height: 600px;
+    background-color: #fafafa;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    position: relative;
+    transform: var(--show);
+    transition: var(--transition-bg);
+}
+
+.modal__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: crimson;
+    color: #fafafa;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+
+}
+
+.modal__img {
+    grid-row: 1/-1;
+    grid-column: 1/4;
+    width: 80%;
+    place-self: center;
+}
+
+.modal__texts {
+    grid-row: 2/-2;
+    grid-column: 4/-2;
+    place-self: center;
+    display: grid;
+    gap: 30px;
+}
+
+.modal__title {
+    font-size: 3rem;
+}
+
+.modal__paragraph {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.modal__cta {
+    text-decoration: none;
+    background-color: indigo;
+    color: #fafafa;
+    margin: auto;
+    padding: 1rem 3rem;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .modal__container {
+        display: block;
+        padding: 2rem 0;
+    }
+
+    .modal__img {
+        display: block;
+        max-width: 300px;
+        margin: 1rem auto;
+    }
+
+    .modal__texts {
+        text-align: center;
+    }
+    
+    .modal__title {
+        font-size: 2rem;
+    }
+
+
+}
