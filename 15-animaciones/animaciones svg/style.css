@@ -1,0 +1,49 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+}
+
+.svg {
+    width: 500px;
+    margin: auto;
+}
+
+.svg2 {
+    width: 600px;
+    margin: auto;
+    border: 4px solid #000;
+}
+
+#globo {
+    transform-origin: center;
+    animation: rotate 2s 3s forwards;
+    transform-box: fill-box;
+}
+
+#background {
+    transform: translate(-100%);
+    animation: animate 3s forwards;
+}
+
+#telephone {
+    transform-origin: center;
+    animation: rotate 2s alternate infinite;
+}
+
+@keyframes animate {
+    to {
+        transform: unset;
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: scale(.2) rotate(360deg);
+    }
+}
