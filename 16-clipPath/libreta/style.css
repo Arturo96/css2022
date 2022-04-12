@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Shadows Into Light", cursive;
+  min-height: 100vh;
+  display: flex;
+}
+
+.book {
+  background-color: #ffffff;
+  background-size: 40px 40px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    #000dff,
+    #000dff 2px,
+    #ddd 2px,
+    #ddd
+  );
+  width: 450px;
+  height: 560px;
+  margin: auto;
+  border: 2px solid #000dff;
+  padding: 40px 100px;
+  padding-right: 0;
+  position: relative;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    background-color: crimson;
+}
+
+.line-h {
+    height: 15px;
+    width: 50px;
+    border-radius: 10px;
+    position: absolute;
+    top: 95px;
+    left: -25px;
+    background: linear-gradient(90deg, rgba(46,35,241,1) 0%, rgba(105,105,251,1) 50%, rgba(127,0,255,1) 100%);
+}
+
+.line-h--h2 {
+    top: 215px;
+}
+
+.line-h--h3 {
+    top: 335px;
+}
+
+.line-h--h4 {
+    top: 455px;
+}
+
+.book__img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -50px;
+    top: -50px;
+    transform: rotate(360deg) scale(0);
+    animation: image .5s 4s forwards;
+}
+
+.circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #fff;
+    top: 85px;
+    left: 10px;
+    box-shadow: 0 120px,
+                0 240px,
+                0 360px;
+}
+
+.book__title {
+    margin-top: 200px;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: show 3s forwards;
+}
+
+.book__paragraph {
+    margin-top: 8px;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: show 2s 2s forwards;
+}
+
+@keyframes show {
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes image {
+    to {
+        transform: rotate(0) scale(1);
+    }
+}
