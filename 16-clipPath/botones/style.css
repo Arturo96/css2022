@@ -1,0 +1,96 @@
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: start;
+    gap: 2em;
+    background-color: #eee;
+}
+
+.button {
+    text-decoration: none;
+    background-color: indigo;
+    padding: 12px 25px;
+    color: #fafafa;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.button--opacity::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(0 at center);
+    transition: clip-path .7s;
+}
+
+.button--opacity:hover::before {
+    clip-path: circle(100% at center);
+}
+
+.button--bg {
+    background-color: #fafafa;
+    color: indigo;
+    transition: color .5s;
+}
+
+.button--bg:hover {
+    color: #fafafa;
+}
+
+.button--bg::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: indigo;
+    top: 0;
+    left: 0;
+    clip-path: circle(0 at top left);
+    transition: clip-path .5s, background-color .5s;
+}
+
+.button--bg:hover::before {
+    clip-path: circle(150% at top left);
+}
+
+.button__text {
+    position: relative;
+    z-index: 1;
+}
+
+.link {
+    text-decoration: none;
+    font-size: 1.5em;
+    justify-self: start;
+}
+
+.link::after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    height: 3px;
+    width: 100%;
+    background-color: indigo;
+    /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); Animación de izq a der */
+    clip-path: circle(0 at center);
+    transition: clip-path .7s;
+}
+
+.link:hover::after {
+    /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); Animación de izq a der */
+    clip-path: circle(100% at center);
+}
