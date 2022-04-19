@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
+
+:root {
+    --color-primary:  hsl(322, 100%, 66%);
+    --color-primary-light: hsl(321, 100%, 78%);
+    --color-secondary: hsl(0, 100%, 63%);
+    --color-neutral: hsl(192, 100%, 9%);
+    --color-neutral2: hsl(207, 100%, 98%);
+    --font-h: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --shadow-text: 0 0 1px rgba(0, 0, 0, 0.2);
+    --shadow-cta: 0 2px 3px -2px var(--color-neutral);
+    --bg-wave: #e1f5fe;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-h);
+}
+
+img {
+    max-width: 100%;
+}
+
+.header {
+    width: 90%;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__img {
+    width: 125px;
+}
+
+.cta {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 30px;
+    padding: .35em 1.4em ;
+    font-size: .85em;
+    text-align: center;
+}
+
+.main {
+    overflow: hidden;
+    padding: 7rem 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.community__texts {
+    display: grid;
+    gap: 1.75em;
+    text-align: center;
+}
+
+.community__title, .community__paragraph {
+    text-shadow: var(--shadow-text);
+}
+
+.community__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.community__paragraph {
+    line-height: 1.5;
+}
+
+.cta--start {
+    margin-top: 1rem;
+    place-self: center;
+    background-color: var(--color-primary);
+    color: var(--color-neutral2);
+    padding: .85em 3.25em ;
+    font-weight: 600;
+    box-shadow: var(--shadow-cta);
+    text-shadow: 0 0 5px var(--color-primary);
+}
+
+.community__picture {
+    margin-top: 6rem;
+}
+
+.followers__container {
+    width: 60%;
+    margin: 7rem auto;
+    display: grid;
+    place-content: center;
+}
+
+.followers__img {
+}
+
+.followers__title {
+    font-size: 5em;
+    font-family: var(--font-body);
+}
+
+.followers__subtitle {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: #8b989e;
+    font-size: 1.15em;
+    text-align: center;
+}
+
+.wave {
+    background-color: var(--bg-wave);
+    
+}
+
+.about__container {
+    padding: 4em 0 6em;
+}
+
+.about__img {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.about__texts {
+    margin-top: 5rem;
+    text-align: center;
+    text-shadow: var(--shadow-text);
+}
+
+.about__paragraph {
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+.ready__texts {
+    text-align: center;
+    padding: 5rem 0 8rem;
+}
+
+.ready__title {
+    font-size: 1.75em;
+    margin-bottom: 2rem;
+}
+
+.footer {
+    background-color: var(--color-neutral);
+    color: var(--color-neutral2);
+    padding: 4rem 0 2rem;
+}
+
+.wave--footer svg {
+    display: block;
+}
+
+.newsletter {
+    margin-bottom: 7rem;
+}
+
+.newsletter__title {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+}
+
+.newsletter__paragraph {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.suscribe {
+    display: flex;
+    flex-direction: column;
+}
+
+.suscribe__input {
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+.suscribe__submit {
+    align-self: flex-end;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 0.85em 2.75em;
+    background-color: var(--color-primary);
+    color: var(--color-neutral2);
+    border: none;
+    border-radius: 4px;
+}
+
+.contact__logo {
+    margin-bottom: 1rem;
+}
+
+.contact__paragraph {
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.contact__info p {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.contact__phone {
+    margin-bottom: 1.25rem;
+}
+
+.social {
+    margin-top: 3.5rem;
+}
+
+.social img {
+    width: 40px;
+    padding-right: 0.5rem;
+}
+
+@media screen and (min-width: 375px) {
+    .community__title {
+        font-size: 1.75em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .followers {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .followers__container {
+        width: 45%;
+    }
+}
