@@ -233,6 +233,10 @@ img {
     margin-top: 3.5rem;
 }
 
+.social a {
+    text-decoration: none;
+}
+
 .social img {
     width: 40px;
     padding-right: 0.5rem;
@@ -245,6 +249,11 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+
+    .main {
+        padding-bottom: 1rem;
+    }
+
     .followers {
         display: flex;
         flex-wrap: wrap;
@@ -252,5 +261,112 @@ img {
 
     .followers__container {
         width: 45%;
+    }
+
+    .header__img {
+        width: 150px;
+    }
+
+    .community__title {
+        font-size: 1.9rem;
+    }
+
+    .community__texts {
+        gap: 1.25em;
+    }
+
+    .community__paragraph {
+        width: 60%;
+        text-align: center;
+        place-self: center;
+    }
+
+    .cta--start {
+        padding: 1.35em 5em;
+    }
+
+    .community__img {
+        width: 80%;
+        max-width: 800px;
+    }
+
+    .about__container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .about__picture, .about__texts {
+        width: 45%;
+    }
+
+    .about__texts {
+        text-align: left;
+    }
+
+    .about__texts--order {
+        order: -1;
+    }
+
+    .about__title, .ready__title {
+        font-size: 1.85rem;
+    }
+
+    .ready__texts {
+        padding: 5rem 0 0;
+    }
+
+    .ready__title {
+        margin-bottom: .5rem;
+    }
+
+    .footer {
+        padding-bottom: 4rem;
+    }
+
+    .footer__container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .newsletter, .contact {
+        width: 45%;
+        margin: 0;
+    }
+
+    .contact {
+        order: -1;
+    }
+
+    .social {
+        width: 100%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .newsletter__paragraph,
+    .contact__paragraph {
+        width: 70%;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    
+    .suscribe {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .suscribe__input {
+        width: 60%;
+        margin: 0;
+    }
+
+    .suscribe__submit {
+        width: 35%;
+        margin: 0;
     }
 }
