@@ -220,13 +220,25 @@ img {
     margin-bottom: 3rem;
 }
 
-.contact__info p {
-    display: inline-block;
-    margin-left: 1rem;
+.contact__phone, .contact__mail {
+    display: flex;
+    align-items: center;
 }
 
 .contact__phone {
     margin-bottom: 1.25rem;
+}
+
+.contact__phone::after {
+    display: inline-block;
+    content: "Phone: +1-543-123-4567";
+    margin-left: 1rem;
+}
+
+.contact__mail::after {
+    display: inline-block;
+    content: "example@company.com";
+    margin-left: 1rem;
 }
 
 .social {
