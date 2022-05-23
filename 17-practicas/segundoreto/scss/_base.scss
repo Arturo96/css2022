@@ -1,0 +1,62 @@
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap');
+
+$bps: (
+    "xsmall": 385px,
+    "small": 480px,
+    "medium": 768px,
+    "large": 1024px,
+    "xlarge": 1440px
+);
+
+@mixin rwd($bp) {
+
+    @if(map.has-key($bps, $bp)) {
+
+        @media screen and (min-width: map.get($bps, $bp)) {
+            @content;
+        }
+
+    } @else {
+        @media screen and (min-width: $bp) {
+            @content;
+        }
+    }
+}
+
+
+:root {
+    --color-intro: hsl(217, 28%, 15%);
+    --color-main: hsl(218, 28%, 13%);
+    --color-footer: hsl(216, 53%, 9%);
+    --color-comments: hsl(219, 30%, 18%);
+    --color-cyan: hsl(176, 68%, 64%);
+    --color-blue: hsl(198, 60%, 50%);
+    --color-error: hsl(0, 100%, 63%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-gray: hsl(0, 0%, 80%);
+    --font-body: 14px;
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--font-body);
+    font-family: 'Open Sans', sans-serif;
+    color: var(--color-gray);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
+    color: var(--color-white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+

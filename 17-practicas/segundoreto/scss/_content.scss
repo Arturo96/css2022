@@ -1,0 +1,346 @@
+@use "base";
+
+.main {
+  background-color: var(--color-main);
+  padding: 0.1px 0;
+  position: relative;
+}
+
+.wave {
+  background-color: var(--color-intro);
+  width: 100%;
+  display: block;
+  padding-top: 15rem;
+
+  @include base.rwd(medium) {
+    padding-top: 33rem;
+  }
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.paragraph {
+  line-height: 1.5;
+  font-size: 1rem;
+
+  @include base.rwd(medium) {
+    font-size: 14px;
+  }
+}
+
+.container {
+  width: 83%;
+  margin: 2rem auto;
+}
+
+.cta {
+  text-decoration: none;
+  color: var(--color-white);
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  background-color: var(--color-cyan);
+  font-size: 1.15em;
+  padding: 1.25em 0;
+  border-radius: 30px;
+  max-width: 300px;
+  width: 100%;
+  place-self: center;
+
+  @include base.rwd(medium) {
+    padding: 1em 0;
+  }
+}
+
+.subtitle {
+  font-size: 1.5em;
+
+  @include base.rwd(medium) {
+    font-size: 1.25em;
+  }
+}
+
+.start {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__texts {
+    margin-top: 2rem;
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 2em;
+    line-height: 1.5;
+  }
+}
+
+.features {
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+
+  @include base.rwd(medium) {
+    padding-top: 7rem;
+
+    &__container {
+      max-width: 850px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4rem;
+    }
+  }
+}
+
+.feature {
+  margin-top: 6rem;
+
+  @include base.rwd(medium) {
+    margin-top: 0;
+    flex-basis: 42%;
+    height: 265px;
+  }
+
+  &__icon {
+    display: block;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  &__texts {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+
+  &__paragraph {
+    margin-top: 1rem;
+  }
+}
+
+.workflow {
+  padding-top: 6rem;
+
+  @include base.rwd(medium) {
+    padding-top: 2rem;
+  }
+
+  &__picture {
+    @include base.rwd(medium) {
+      width: 50%;
+    }
+  }
+
+  &__subtitle {
+    @include base.rwd(medium) {
+      font-size: 2em;
+      max-width: 349px;
+      line-height: 1.5;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__texts {
+    margin-top: 3rem;
+    @include base.rwd(medium) {
+      width: 45%;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-cyan);
+    margin-top: 1rem;
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+    gap: 7px;
+  }
+
+  &__icon {
+    width: 18px;
+  }
+
+  &__container {
+    @include base.rwd(medium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* Comments */
+
+.comments {
+  margin: 12rem 0 0;
+
+  &__container {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include base.rwd(medium) {
+      max-width: unset;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+.comment {
+  max-width: 350px;
+  background-color: var(--color-comments);
+  padding: 2em 1.75em 1.5em;
+  border-radius: 5px;
+
+  &--first {
+    position: relative;
+  }
+
+  &__text {
+    line-height: 1.85;
+    font-size: 13px;
+    @include base.rwd(medium) {
+      line-height: 1.5;
+    }
+  }
+}
+
+.quote {
+  position: absolute;
+  top: -24px;
+  left: 2px;
+  width: 32px;
+
+  @include base.rwd(medium) {
+    width: unset;
+    top: -45px;
+    left: -10px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 1.5rem;
+
+  &__avatar {
+    width: 30px;
+  }
+
+  &__img {
+    border-radius: 50%;
+  }
+
+  &__texts > * {
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  &__role {
+    font-weight: 400;
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
+
+.signUp {
+  position: relative;
+  background-color: var(--color-comments);
+  box-shadow: 0 0 5px var(--color-main);
+  width: 90%;
+  max-width: 800px;
+  margin: 12rem auto -12rem;
+  border-radius: 5px;
+  padding: 3rem 1.5rem 2.75rem;
+  text-align: center;
+
+  &__paragraph {
+    margin: 1.5rem 0;
+
+    @include base.rwd(medium) {
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__form {
+    @include base.rwd(medium) {
+      text-align: left;
+      display: flex;
+      gap: 2rem;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__form > * {
+    outline: none;
+    border: none;
+  }
+
+  .cta {
+    max-width: 325px;
+    @include base.rwd(medium) {
+      max-width: unset;
+      margin-top: 0;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+      flex-basis: 35%;
+    }
+  }
+
+  &__input {
+    background-color: var(--color-white);
+    color: var(--color-gray);
+    padding: 20px 32px 15px;
+    font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 325px;
+
+    @include base.rwd(medium) {
+      max-width: unset;
+      flex-basis: 65%;
+    }
+   
+    &::placeholder {
+      color: var(--color-gray);
+    }
+  }
+
+  &__cta {
+    margin-top: 1.5rem;
+    padding: 1em 0;
+  }
+
+  &__subtitle {
+    @include base.rwd(medium) {
+      font-size: 1.85em;
+    }
+  }
+}

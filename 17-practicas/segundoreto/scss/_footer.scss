@@ -1,0 +1,143 @@
+@use "base";
+
+.footer {
+  padding-top: 15rem;
+  padding-bottom: 1.25rem;
+  background-color: var(--color-footer);
+
+  &__texts {
+    margin-top: 2rem;
+
+    @include base.rwd(medium) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__contact {
+    @include base.rwd(medium) {
+      display: flex;
+      justify-content: space-between;
+      flex-basis: 55%;
+      max-width: 570px;
+    }
+  }
+
+  &__location {
+    display: flex;
+    gap: 1.5rem;
+    @include base.rwd(medium) {
+      max-width: 320px;
+    }
+  }
+
+  &__icon {
+    margin-top: 7px;
+
+    &--phone {
+      margin-top: 0;
+    }
+  }
+
+  &__tag {
+    max-width: 40px;
+
+    &--phone {
+      width: 14px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+    @include base.rwd(medium) {
+      margin-top: 0;
+    }
+
+    figure {
+      width: 37px;
+    }
+
+    &--email {
+      @include base.rwd(medium) {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  &__text {
+    &::after {
+      display: inline-block;
+    }
+
+    &--phone::after {
+      content: "+1-543-123-4567";
+    }
+
+    &--email::after {
+      content: "example@fylo.com";
+    }
+  }
+
+  &__navs {
+    margin-top: 5rem;
+
+    @include base.rwd(medium) {
+      margin-top: 0;
+      display: flex;
+      width: 25%;
+      max-width: 235px;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @include base.rwd(medium) {
+      margin-top: 0;
+      gap: 1rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    line-height: 2.5;
+    
+    @include base.rwd(medium) {
+      line-height: unset;
+    }
+  }
+}
+
+.social {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  @include base.rwd(medium) {
+    margin-top: 0;
+    align-items: flex-start;
+    width: 115px;
+  }
+
+  img {
+    display: block;
+    width: 20px;
+    object-fit: cover;
+  }
+
+  &__link {
+    padding: 5px;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+  }
+}
