@@ -126,7 +126,7 @@ img {
   color: var(--color-white);
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  background-image: linear-gradient(to right, var(--color-blue) 0%, var(--color-cyan) 50%, var(--color-blue) 100%);
+  background-image: linear-gradient(to right, var(--color-cyan) 0%, var(--color-blue) 100%);
   font-size: 1.15em;
   padding: 1.25em 0;
   border-radius: 30px;
