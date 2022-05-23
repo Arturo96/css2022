@@ -4,6 +4,9 @@
   padding-top: 15rem;
   padding-bottom: 1.25rem;
   background-color: var(--color-footer);
+  @include base.rwd(medium) {
+    padding-top: 9rem;
+  }
 
   &__texts {
     margin-top: 2rem;
