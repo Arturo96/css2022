@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --opacity-cta: .6;
+
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --lime-green-hover: hsla(136, 65%, 51%, var(--opacity-cta));
+  --bright-cyan: hsl(192, 70%, 51%);
+  --bright-cyan-hover: hsla(192, 70%, 51%, var(--opacity-cta));
+
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  --gradient-cta: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+  --gradient-cta-hover: linear-gradient(to right, var(--lime-green-hover), var(--bright-cyan-hover));
+
+  --header-height: 70px;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+    background-color: lightblue;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+    color: var(--dark-blue);
+}
+
+.cta {
+    display: inline-block;
+    background-image: var(--gradient-cta);
+    padding: 1rem 2.5rem;
+    color: var(--white);
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+
+    &:hover {
+        background-image: var(--gradient-cta-hover);
+    }
+}
+
+.text {
+    line-height: 1.5;
+    color: var(--grayish-blue);
+}
