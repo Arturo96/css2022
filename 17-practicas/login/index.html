@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <section class="login">
+      <h1 class="login__title">Inicia Sesión</h1>
+      <p class="login__text">
+        ¿Aún no tienes una cuenta?
+        <a href="#" class="login__link">Entra aquí</a>
+      </p>
+
+      <form class="form">
+        <div class="form__group">
+          <input id="nombre" type="text" class="form__input" placeholder=" " />
+          <label for="nombre" class="form__label">Nombre:</label>
+        </div>
+        <div class="form__group">
+          <input id="usuario" type="text" class="form__input" placeholder=" " />
+          <label for="usuario" class="form__label">Usuario:</label>
+        </div>
+        <div class="form__group">
+          <input
+            id="password"
+            type="password"
+            class="form__input"
+            placeholder=" "
+          />
+          <label for="password" class="form__label">Contraseña:</label>
+        </div>
+
+        <input type="submit" class="form__submit" value="Entrar" />
+      </form>
+    </section>
+  </body>
+</html>
