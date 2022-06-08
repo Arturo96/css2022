@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Menu Dropdown</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <ul class="menu">
+        <li class="menu__item">
+          <div class="menu__button">
+            <img
+              src="assets/dashboard.svg"
+              alt="Dashboard icon"
+              class="menu__icon"
+            />
+            <a href="#" class="menu__link">Inicio</a>
+          </div>
+        </li>
+
+        <li class="menu__item menu__item--toggle">
+          <div class="menu__button menu__button--toggle">
+            <img src="assets/docs.svg" alt="Docs icon" class="menu__icon" />
+            <a href="#" class="menu__link">Servicios</a>
+            <img src="assets/arrow.svg" alt="Arrow icon" class="menu__arrow" />
+          </div>
+
+          <ul class="submenu">
+            <li class="submenu__item">
+              <a href="#" class="menu__link">Estoy dentro</a>
+            </li>
+            <li class="submenu__item">
+              <a href="#" class="menu__link">Estoy dentro</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu__item">
+          <div class="menu__button">
+            <img src="assets/stats.svg" alt="Stats icon" class="menu__icon" />
+            <a href="#" class="menu__link">Estadísticas</a>
+          </div>
+        </li>
+
+        <li class="menu__item menu__item--toggle">
+          <div class="menu__button menu__button--toggle">
+            <img src="assets/bell.svg" alt="Bell icon" class="menu__icon" />
+            <a href="#" class="menu__link">Notificaciones</a>
+            <img src="assets/arrow.svg" alt="Arrow icon" class="menu__arrow" />
+          </div>
+
+          <ul class="submenu">
+            <li class="submenu__item">
+              <a href="#" class="menu__link">Estoy dentro</a>
+            </li>
+            <li class="submenu__item">
+              <a href="#" class="menu__link">Estoy dentro</a>
+            </li>
+            <li class="submenu__item">
+              <a href="#" class="menu__link">Estoy dentro</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu__item">
+          <div class="menu__button">
+            <img
+              src="assets/message.svg"
+              alt="Message icon"
+              class="menu__icon"
+            />
+            <a href="#" class="menu__link">Contacto</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+  </body>
+</html>
