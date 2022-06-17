@@ -1,0 +1,52 @@
+.plans {
+  text-align: center;
+}
+
+.cards {
+  margin-top: 5rem;
+  display: grid;
+  gap: 3rem;
+}
+
+.card {
+  width: 90%;
+  background-color: #e5e5f7;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+
+  &__title,
+  &__topic {
+    color: #696871;
+    font-weight: 300;
+  }
+
+  &__title {
+    font-size: 1em;
+  }
+
+  &__topic {
+    font-size: 1.2em;
+
+    &:not(:first-of-type) {
+      margin-top: 12px;
+    }
+  }
+
+  &__price {
+    margin: 1.25rem 0 2rem;
+  }
+
+  &__cta {
+    display: block;
+    width: 76%;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #5454d4;
+    margin-top: 3rem;
+    padding: 1.05em 0;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-weight: 600;
+  }
+}

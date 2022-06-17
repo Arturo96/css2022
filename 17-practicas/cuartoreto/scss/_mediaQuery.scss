@@ -1,0 +1,54 @@
+@media (min-width: 600px) {
+  .subtitle {
+    font-size: 2em;
+  }
+
+  .start {
+    &__title {
+      font-size: 2.5em;
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .menu {
+    opacity: 1;
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+
+    &__toggle,
+    &__close {
+      display: none;
+    }
+  }
+
+  .start {
+    &__title {
+      font-size: 3em;
+    }
+  }
+
+  .about {
+    &__container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__picture {
+      width: 49%;
+    }
+
+    &__texts {
+      margin-top: 0;
+      width: 49%;
+      text-align: left;
+    }
+
+    &__text {
+      line-height: 1.7;
+    }
+  }
+}

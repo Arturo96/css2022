@@ -1,0 +1,34 @@
+.content {
+  &__container {
+    text-align: center;
+  }
+
+  &__text {
+    margin-top: 1.55rem;
+    line-height: 1.7;
+  }
+}
+
+.topics {
+  margin-top: 5rem;
+  display: grid;
+  gap: 2rem 6rem;
+  grid-template-columns: repeat(auto-fill, 260px);
+  justify-content: center;
+}
+
+.topic {
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 40px;
+  }
+
+  &__title {
+    margin: 1rem 0;
+  }
+
+  &__text {
+    line-height: 1.15;
+  }
+}
