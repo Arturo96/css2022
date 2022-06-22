@@ -1,5 +1,8 @@
 .about {
-  background-color: rgba(#444cf7, 0.2);
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(#444cf7 0.65px, #e5e5f7 0.65px);
+  background-size: 13px 13px;
 
   &__img {
     width: 100%;

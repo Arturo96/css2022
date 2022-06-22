@@ -13,12 +13,16 @@
   background-color: #e5e5f7;
   border-radius: 10px;
   margin: 0 auto;
-  padding: 2rem 0 3rem;
+  padding: 2rem 0 2.5rem;
 
   &__title,
   &__topic {
     color: #696871;
     font-weight: 300;
+
+    &--active {
+      color: #fff;
+    }
   }
 
   &__title {
@@ -34,12 +38,17 @@
   }
 
   &__price {
+    font-size: 2em;
     margin: 1.25rem 0 2rem;
+
+    &--active {
+      color: #fff;
+    }
   }
 
   &__cta {
     display: block;
-    width: 76%;
+    width: 80%;
     margin: 0 auto;
     background-color: #fff;
     color: #5454d4;
@@ -48,5 +57,16 @@
     border-radius: 12px;
     border: 1px solid #ccc;
     font-weight: 600;
+
+    &--active {
+      background-color: #9f3919;
+      color: #fff;
+      border: none;
+    }
+  }
+
+  &--active {
+    padding: 4rem 0;
+    background-color: #ff7143;
   }
 }
