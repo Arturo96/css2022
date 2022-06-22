@@ -1,0 +1,11 @@
+.questions {
+  &__title,
+  &__text {
+    text-align: center;
+  }
+
+  &__text {
+    line-height: 1.15;
+    margin: 1.5rem 0 2rem;
+  }
+}

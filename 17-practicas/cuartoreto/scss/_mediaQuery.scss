@@ -37,10 +37,6 @@
   }
 
   .comment {
-    &__content {
-      width: 83%;
-    }
-
     &__role {
       margin-top: 0;
     }
@@ -89,24 +85,20 @@
     }
   }
 
-  .comment {
+  .comments {
     &__arrow {
       width: 45px;
     }
+  }
 
-    &__content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 85%;
-    }
+  .comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &__texts {
       width: 55%;
-    }
-
-    &__picture {
-      margin: 0;
+      margin-bottom: 0;
     }
 
     &__img {
@@ -118,10 +110,6 @@
 
 @media (min-width: 1024px) {
   .comment {
-    &__content {
-      width: 90%;
-    }
-
     &__texts {
       width: 65%;
       max-width: 700px;

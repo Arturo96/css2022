@@ -133,11 +133,14 @@
 
       <section class="comments">
         <div class="container comments__container">
-          <div class="comment" id="comment1">
-            <a href="#" class="comment__arrow">
-              <img src="images/leftarrow.svg" alt="Left arrow" />
-            </a>
-            <div class="comment__content">
+          <img
+            src="images/leftarrow.svg"
+            alt="Left arrow"
+            class="comments__arrow"
+            id="beforeArrow"
+          />
+          <div class="comments__wrap">
+            <div class="comment comment--show" data-id="0">
               <div class="comment__texts">
                 <h2 class="subtitle comment__title">
                   Mi nombre es Jordan Alexander,
@@ -154,12 +157,73 @@
                 <img src="images/face.jpg" alt="Face" class="comment__img" />
               </figure>
             </div>
-            <a href="#" class="comment__arrow">
-              <img src="images/rightarrow.svg" alt="Right arrow" />
-            </a>
+            <div class="comment" data-id="1">
+              <div class="comment__texts">
+                <h2 class="subtitle comment__title">
+                  Mi nombre es Alejandra Perez,
+                  <span class="comment__role">estudiante de CSS.</span>
+                </h2>
+                <p class="comment__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                  est esse, asperiores eaque laborum veniam laboriosam saepe
+                  reiciendis dolorem. Cum, ratione voluptatum!
+                </p>
+              </div>
+              <figure class="comment__picture">
+                <img src="images/face2.jpg" alt="Face 2" class="comment__img" />
+              </figure>
+            </div>
+            <div class="comment" data-id="2">
+              <div class="comment__texts">
+                <h2 class="subtitle comment__title">
+                  Mi nombre es Andrés Arteaga,
+                  <span class="comment__role">estudiante de CSS.</span>
+                </h2>
+                <p class="comment__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                  est esse, niam laboriosam saepe reiciendis dolorem. Cum,
+                  ratione voluptatum!
+                </p>
+              </div>
+              <figure class="comment__picture">
+                <img src="images/face3.jpg" alt="Face 3" class="comment__img" />
+              </figure>
+            </div>
+            <div class="comment" data-id="3">
+              <div class="comment__texts">
+                <h2 class="subtitle comment__title">
+                  Mi nombre es Kevin Ramirez,
+                  <span class="comment__role">estudiante de CSS.</span>
+                </h2>
+                <p class="comment__text">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut
+                  est esse, niam laboriosam saepe reiciendis dolorem. Cum,
+                  ratione voluptatum!
+                </p>
+              </div>
+              <figure class="comment__picture">
+                <img src="images/face4.jpg" alt="Face 4" class="comment__img" />
+              </figure>
+            </div>
           </div>
+          <img
+            src="images/rightarrow.svg"
+            alt="Right arrow"
+            class="comments__arrow"
+            id="nextArrow"
+          />
         </div>
       </section>
+
+      <section class="container questions">
+        <h2 class="subtitle questions__title">Preguntas frecuentes</h2>
+        <p class="questions__text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, porro
+          doloribus neque perspiciatis sapiente fuga.
+        </p>
+      </section>
     </main>
+
+    <script src="slider.js"></script>
   </body>
 </html>
