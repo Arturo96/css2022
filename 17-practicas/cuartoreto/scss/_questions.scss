@@ -8,4 +8,54 @@
     line-height: 1.15;
     margin: 1.5rem 0 2rem;
   }
+
+  &__container {
+    display: grid;
+    gap: 2rem;
+  }
+}
+
+.question {
+  padding: 0;
+  border: 1px solid #5454d4;
+  border-radius: 5px;
+  transition: padding 0.5s;
+
+  &--pb {
+    padding-bottom: 30px;
+  }
+
+  &__content {
+    padding: 0 1.75em;
+    overflow: hidden;
+  }
+
+  &__title {
+    padding: 30px 0;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    background-color: #001a49;
+    border-radius: 50%;
+    align-self: flex-end;
+    transition: transform 0.5s;
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__img {
+    display: block;
+  }
+}
+
+.answer {
+  height: 0;
+  line-height: 1.15;
+  transition: height 0.5s;
 }
