@@ -1,0 +1,72 @@
+.footer {
+  background-color: #1d293f;
+  color: #fff;
+
+  --p-container: 5.9rem 0 2rem;
+
+  &__content {
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  &__menu {
+    display: grid;
+    gap: 1.5em;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 2em;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
+
+.newsletter {
+  &__title {
+    font-size: 1.5em;
+  }
+
+  &__form {
+    margin-top: 0.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  &__input {
+    display: block;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    padding: 0.85em 0.75em;
+    font-family: inherit;
+    font-size: 1em;
+  }
+}
+
+.social,
+.copy {
+  text-align: center;
+}
+
+.social {
+  padding-top: 1.75rem;
+
+  &__img {
+    width: 30px;
+  }
+}
+
+.copy {
+  font-weight: 300;
+}

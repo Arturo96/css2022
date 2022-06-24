@@ -37,6 +37,16 @@ img {
   background-color: #2091f9;
   padding: 10px 1.85em;
   border-radius: 25px;
+
+  &--square {
+    width: 125px;
+    padding: 0.75em 0;
+    border: none;
+    border-radius: 7px;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+  }
 }
 
 .subtitle {

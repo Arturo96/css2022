@@ -37,6 +37,15 @@ img {
   padding: 10px 1.85em;
   border-radius: 25px;
 }
+.cta--square {
+  width: 125px;
+  padding: 0.75em 0;
+  border: none;
+  border-radius: 7px;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+}
 
 .subtitle {
   font-size: 1.8em;
@@ -309,7 +318,7 @@ img {
 }
 .questions__text {
   line-height: 1.15;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 3rem;
 }
 .questions__container {
   display: grid;
@@ -355,6 +364,78 @@ img {
   transition: height 0.5s;
 }
 
+.ready {
+  text-align: center;
+  margin: 6rem auto 0;
+  max-width: 700px;
+}
+.ready__text {
+  line-height: 1.15;
+  margin: 2rem 0;
+}
+
+.footer {
+  background-color: #1d293f;
+  color: #fff;
+  --p-container: 5.9rem 0 2rem;
+}
+.footer__content {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+.footer__menu {
+  display: grid;
+  gap: 1.5em;
+}
+.footer__title {
+  font-weight: 300;
+  font-size: 2em;
+}
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__link {
+  color: inherit;
+}
+
+.newsletter__title {
+  font-size: 1.5em;
+}
+.newsletter__form {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.newsletter__input {
+  display: block;
+  border-radius: 7px;
+  border: none;
+  outline: none;
+  padding: 0.85em 0.75em;
+  font-family: inherit;
+  font-size: 1em;
+}
+
+.social,
+.copy {
+  text-align: center;
+}
+
+.social {
+  padding-top: 1.75rem;
+}
+.social__img {
+  width: 30px;
+}
+
+.copy {
+  font-weight: 300;
+}
+
 @media (min-width: 600px) {
   .subtitle {
     font-size: 2em;
@@ -391,6 +472,10 @@ img {
 
   .comment__role {
     margin-top: 0;
+  }
+
+  .question__title {
+    font-size: 1.25em;
   }
 }
 @media (min-width: 800px) {
