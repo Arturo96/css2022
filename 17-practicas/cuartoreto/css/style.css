@@ -38,7 +38,7 @@ img {
   border-radius: 25px;
 }
 .cta--square {
-  width: 125px;
+  width: 120px;
   padding: 0.75em 0;
   border: none;
   border-radius: 7px;
@@ -377,7 +377,7 @@ img {
 .footer {
   background-color: #1d293f;
   color: #fff;
-  --p-container: 5.9rem 0 2rem;
+  --p-container: 5.9rem 0 1.75rem;
 }
 .footer__content {
   padding-bottom: 4rem;
@@ -415,7 +415,7 @@ img {
   border-radius: 7px;
   border: none;
   outline: none;
-  padding: 0.85em 0.75em;
+  padding: 0.85em 0.6em;
   font-family: inherit;
   font-size: 1em;
 }
@@ -477,6 +477,24 @@ img {
   .question__title {
     font-size: 1.25em;
   }
+
+  .footer__menu {
+    text-align: center;
+  }
+  .footer__content {
+    gap: 1em;
+  }
+  .footer__menu {
+    gap: 2em;
+  }
+  .footer__nav {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .newsletter__form {
+    grid-template-columns: 1fr max-content;
+  }
 }
 @media (min-width: 800px) {
   .menu {
@@ -528,11 +546,31 @@ img {
     width: 250px;
     height: 250px;
   }
+
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0;
+  }
+  .footer__menu {
+    text-align: left;
+    width: 45%;
+  }
+  .footer__nav {
+    width: 100%;
+    margin: unset;
+  }
 }
 @media (min-width: 1024px) {
   .comment__texts {
     width: 65%;
     max-width: 700px;
+  }
+
+  .footer__menu {
+    width: 35%;
+    max-width: 350px;
   }
 }
 
