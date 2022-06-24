@@ -78,6 +78,7 @@
     position: static;
     flex-direction: row;
     background-color: transparent;
+    pointer-events: unset;
 
     &__toggle,
     &__close {

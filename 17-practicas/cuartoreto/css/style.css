@@ -502,6 +502,7 @@ img {
     position: static;
     flex-direction: row;
     background-color: transparent;
+    pointer-events: unset;
   }
   .menu__toggle, .menu__close {
     display: none;
