@@ -1,0 +1,68 @@
+@media (min-width: 500px) {
+  .header {
+    --p-container: 60px 0;
+
+    &__texts {
+      text-align: left;
+    }
+
+    &__text {
+      line-height: 1.15;
+      margin: 1.6rem 0;
+    }
+  }
+
+  .title {
+    --title-size: 3.8em;
+  }
+
+  .cta {
+    margin: 0;
+    max-width: 235px;
+  }
+
+  .author {
+    &__job,
+    &__text {
+      width: 70%;
+    }
+
+    &__job {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4em;
+  }
+
+  .header {
+    --p-container: 9.35rem 0 9rem;
+
+    &__container {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__texts {
+      width: 60%;
+    }
+
+    &__picture {
+      width: 38%;
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 850px) {
+  .header {
+    --p-container: 12rem 0 13rem;
+  }
+}

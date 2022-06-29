@@ -1,0 +1,39 @@
+.author {
+  --p-container: 4rem 0;
+
+  display: grid;
+  gap: 1.25em;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 3rem;
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__title,
+  &__job {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 1.5em;
+  }
+
+  &__job {
+    color: var(--bg-cta);
+  }
+
+  &__text {
+    color: var(--color-gray);
+    font-style: italic;
+    line-height: 1.5;
+    margin: 0 auto;
+    width: 90%;
+  }
+}

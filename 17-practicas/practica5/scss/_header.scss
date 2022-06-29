@@ -1,0 +1,43 @@
+.header {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+      radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+    z-index: -1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1.25em;
+  }
+
+  &__texts {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 1.2em;
+    line-height: 1.1;
+    margin: 1.65rem 0 1.6rem;
+  }
+
+  &__img {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+  }
+}
