@@ -17,8 +17,11 @@
   }
 
   .cta {
-    margin: 0;
-    max-width: 235px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    display: inline-block;
+    padding: 1.23em 2.2em;
   }
 
   .author {
@@ -31,9 +34,93 @@
       margin: 0 auto;
     }
   }
+
+  .about {
+    gap: 4.5em;
+  }
+
+  .subtitle {
+    --subtitle-size: 2.5em;
+  }
+
+  .topics {
+    &__cards {
+      width: 100%;
+      grid-template-areas:
+        "t1 . "
+        "t1 t2"
+        "t3 t2"
+        "t3 t4"
+        " . t4";
+    }
+  }
+
+  .topic {
+    &__text {
+      width: 85%;
+      margin: 0 auto;
+    }
+  }
+
+  .topic1 {
+    grid-area: t1;
+  }
+
+  .topic2 {
+    grid-area: t2;
+  }
+
+  .topic3 {
+    grid-area: t3;
+  }
+
+  .topic4 {
+    grid-area: t4;
+  }
+
+  .info {
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    &__card {
+      width: 97%;
+      grid-column: 1/-2;
+      grid-row: 2/-2;
+      z-index: 10;
+    }
+
+    &__picture {
+      display: unset;
+      grid-column: 2/-1;
+      grid-row: 1/-1;
+    }
+
+    &__img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 @media (min-width: 768px) {
+  .about {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    &__texts {
+      width: 50%;
+    }
+
+    &__picture {
+      width: 45%;
+    }
+  }
+
   .title {
     font-size: 4em;
   }
@@ -59,10 +146,25 @@
       width: 100%;
     }
   }
+
+  .topics {
+    &__cards {
+      gap: 1.25em;
+      grid-template-areas:
+        " . t1 . "
+        "t2 t1 t3"
+        "t2 t4 t3"
+        " . t4 . ";
+    }
+  }
 }
 
 @media (min-width: 850px) {
   .header {
     --p-container: 12rem 0 13rem;
+  }
+
+  .about {
+    justify-content: space-between;
   }
 }

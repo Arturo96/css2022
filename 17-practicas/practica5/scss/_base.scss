@@ -2,11 +2,14 @@
 
 :root {
   --title-size: 3em;
+  --subtitle-size: 2em;
   --p-container: 45px 0;
 
   --bg-cta: #444cf7;
   --color-cta: #fff;
   --color-gray: #615a5a;
+
+  --size-img-topic: 80px;
 }
 
 *,
@@ -37,6 +40,11 @@ body {
   line-height: 1.15;
 }
 
+.subtitle {
+  font-size: var(--subtitle-size);
+  line-height: 1.15;
+}
+
 .cta {
   display: block;
   text-decoration: none;
@@ -46,4 +54,10 @@ body {
   padding: 1.23em 0;
   width: 90%;
   margin: 0 auto;
+
+  &--white {
+    width: 100%;
+    background-color: var(--color-cta);
+    color: var(--bg-cta);
+  }
 }

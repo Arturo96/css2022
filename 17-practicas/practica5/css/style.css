@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 :root {
   --title-size: 3em;
+  --subtitle-size: 2em;
   --p-container: 45px 0;
   --bg-cta: #444cf7;
   --color-cta: #fff;
   --color-gray: #615a5a;
+  --size-img-topic: 80px;
 }
 
 *,
@@ -35,6 +37,11 @@ body {
   line-height: 1.15;
 }
 
+.subtitle {
+  font-size: var(--subtitle-size);
+  line-height: 1.15;
+}
+
 .cta {
   display: block;
   text-decoration: none;
@@ -44,6 +51,11 @@ body {
   padding: 1.23em 0;
   width: 90%;
   margin: 0 auto;
+}
+.cta--white {
+  width: 100%;
+  background-color: var(--color-cta);
+  color: var(--bg-cta);
 }
 
 .header {
@@ -88,7 +100,6 @@ body {
   display: grid;
   gap: 1.25em;
   border-bottom: 2px solid #ccc;
-  margin-bottom: 3rem;
 }
 .author__img {
   display: block;
@@ -116,6 +127,95 @@ body {
   width: 90%;
 }
 
+.about {
+  --p-container: 6.5rem 0;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2.5em;
+}
+.about__title {
+  position: relative;
+  padding-bottom: 0.6em;
+}
+.about__title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 100px;
+  background-color: var(--bg-cta);
+  position: absolute;
+  bottom: 0;
+}
+.about__text {
+  margin-top: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.about__cta {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.topics {
+  --p-container: 6rem 0;
+  background-color: #f2f2f2;
+}
+.topics__text {
+  margin-top: 1rem;
+}
+.topics__cards {
+  width: 97%;
+  margin: 4rem auto 0;
+  display: grid;
+  gap: 1em;
+}
+
+.topic {
+  background-color: #fff;
+  border-top: 5px solid #667eea;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  padding: 2.5rem 0;
+}
+.topic__picture {
+  width: var(--size-img-topic);
+  height: var(--size-img-topic);
+  border-radius: 50%;
+  background-color: var(--bg-cta);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+.topic__title {
+  margin: 1.25rem 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+.topic__text {
+  font-weight: 300;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.info {
+  --p-container: 5rem 0;
+}
+.info__card {
+  background-color: #444cf7;
+  color: #fff;
+  padding: 1.25em;
+  width: 95%;
+  margin: 0 auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.info__text {
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 1.5rem 0 1.25rem;
+}
+.info__picture {
+  display: none;
+}
+
 @media (min-width: 500px) {
   .header {
     --p-container: 60px 0;
@@ -133,8 +233,11 @@ body {
   }
 
   .cta {
-    margin: 0;
-    max-width: 235px;
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    display: inline-block;
+    padding: 1.23em 2.2em;
   }
 
   .author__job, .author__text {
@@ -143,8 +246,76 @@ body {
   .author__job {
     margin: 0 auto;
   }
+
+  .about {
+    gap: 4.5em;
+  }
+
+  .subtitle {
+    --subtitle-size: 2.5em;
+  }
+
+  .topics__cards {
+    width: 100%;
+    grid-template-areas: "t1 . " "t1 t2" "t3 t2" "t3 t4" " . t4";
+  }
+
+  .topic__text {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .topic1 {
+    grid-area: t1;
+  }
+
+  .topic2 {
+    grid-area: t2;
+  }
+
+  .topic3 {
+    grid-area: t3;
+  }
+
+  .topic4 {
+    grid-area: t4;
+  }
+
+  .info__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+  .info__card {
+    width: 97%;
+    grid-column: 1/-2;
+    grid-row: 2/-2;
+    z-index: 10;
+  }
+  .info__picture {
+    display: unset;
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+  }
+  .info__img {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 @media (min-width: 768px) {
+  .about {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  .about__texts {
+    width: 50%;
+  }
+  .about__picture {
+    width: 45%;
+  }
+
   .title {
     font-size: 4em;
   }
@@ -166,10 +337,19 @@ body {
   .header__img {
     width: 100%;
   }
+
+  .topics__cards {
+    gap: 1.25em;
+    grid-template-areas: " . t1 . " "t2 t1 t3" "t2 t4 t3" " . t4 . ";
+  }
 }
 @media (min-width: 850px) {
   .header {
     --p-container: 12rem 0 13rem;
+  }
+
+  .about {
+    justify-content: space-between;
   }
 }
 
