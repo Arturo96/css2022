@@ -1,4 +1,14 @@
+@media (min-width: 400px) {
+  .footer__social {
+    width: 90%;
+  }
+}
+
 @media (min-width: 500px) {
+  :root {
+    --angle-info: 88%;
+  }
+
   .header {
     --p-container: 60px 0;
 
@@ -79,6 +89,8 @@
   }
 
   .info {
+    --p-container: 6rem 0 13rem;
+
     &__container {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -90,6 +102,7 @@
       grid-column: 1/-2;
       grid-row: 2/-2;
       z-index: 10;
+      padding: 1.85em;
     }
 
     &__picture {
@@ -157,6 +170,57 @@
         " . t4 . ";
     }
   }
+
+  .info {
+    &__container {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__card {
+      grid-column: 1/4;
+    }
+
+    &__picture {
+      grid-column: 3/-1;
+    }
+
+    &__text {
+      margin: 1.25rem 0;
+    }
+  }
+
+  .footer {
+    &__content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0;
+    }
+
+    &__title,
+    &__text {
+      text-align: left;
+    }
+
+    &__text {
+      margin-top: 1.25rem;
+    }
+
+    &__social {
+      justify-content: flex-start;
+      margin: unset;
+      width: auto;
+      gap: 1.25em;
+    }
+
+    &__contact {
+      width: 50%;
+    }
+
+    &__picture {
+      width: 48%;
+    }
+  }
 }
 
 @media (min-width: 850px) {
@@ -166,5 +230,13 @@
 
   .about {
     justify-content: space-between;
+  }
+
+  .footer {
+    padding-bottom: 2.5em;
+
+    &__picture {
+      width: 45%;
+    }
   }
 }

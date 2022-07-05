@@ -1,0 +1,66 @@
+.footer {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+    radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1em;
+    border-bottom: 2px solid #918484;
+    padding-bottom: 3em;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__text {
+    font-weight: 300;
+    margin: 1.5rem 0 3rem;
+    text-align: center;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid;
+    display: flex;
+    color: inherit;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__copy {
+    margin-top: 1.75rem;
+    text-align: center;
+
+    &::after {
+      content: "hola@alexcgdesign.com";
+      display: inline-block;
+    }
+  }
+}

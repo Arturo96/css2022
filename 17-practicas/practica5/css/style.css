@@ -7,6 +7,7 @@
   --color-cta: #fff;
   --color-gray: #615a5a;
   --size-img-topic: 80px;
+  --angle-info: 80%;
 }
 
 *,
@@ -68,7 +69,7 @@ body {
   display: block;
   position: absolute;
   pointer-events: none;
-  clip-path: polygon(0 0, 100% 0, 100% 66%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   background-color: #e5e5f7;
   opacity: 1;
   background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
@@ -197,7 +198,26 @@ body {
 }
 
 .info {
-  --p-container: 5rem 0;
+  --p-container: 5rem 0 8rem;
+  position: relative;
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+.info::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  clip-path: polygon(0 0, 100% 0, 100% var(--angle-info), 50% 100%, 0 var(--angle-info));
+  background-color: #fff;
+  top: 0;
+}
+.info__container {
+  position: relative;
+  z-index: 10;
 }
 .info__card {
   background-color: #444cf7;
@@ -216,7 +236,73 @@ body {
   display: none;
 }
 
+.footer {
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+.footer__content {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1em;
+  border-bottom: 2px solid #918484;
+  padding-bottom: 3em;
+}
+.footer__title {
+  text-align: center;
+}
+.footer__text {
+  font-weight: 300;
+  margin: 1.5rem 0 3rem;
+  text-align: center;
+}
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.footer__link {
+  text-decoration: none;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid;
+  display: flex;
+  color: inherit;
+  justify-content: center;
+  align-items: center;
+}
+.footer__icon {
+  width: 30px;
+  height: 30px;
+}
+.footer__img {
+  display: block;
+  margin: 0 auto;
+}
+.footer__copy {
+  margin-top: 1.75rem;
+  text-align: center;
+}
+.footer__copy::after {
+  content: "hola@alexcgdesign.com";
+  display: inline-block;
+}
+
+@media (min-width: 400px) {
+  .footer__social {
+    width: 90%;
+  }
+}
 @media (min-width: 500px) {
+  :root {
+    --angle-info: 88%;
+  }
+
   .header {
     --p-container: 60px 0;
   }
@@ -281,6 +367,9 @@ body {
     grid-area: t4;
   }
 
+  .info {
+    --p-container: 6rem 0 13rem;
+  }
   .info__container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -291,6 +380,7 @@ body {
     grid-column: 1/-2;
     grid-row: 2/-2;
     z-index: 10;
+    padding: 1.85em;
   }
   .info__picture {
     display: unset;
@@ -342,6 +432,44 @@ body {
     gap: 1.25em;
     grid-template-areas: " . t1 . " "t2 t1 t3" "t2 t4 t3" " . t4 . ";
   }
+
+  .info__container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .info__card {
+    grid-column: 1/4;
+  }
+  .info__picture {
+    grid-column: 3/-1;
+  }
+  .info__text {
+    margin: 1.25rem 0;
+  }
+
+  .footer__content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .footer__title, .footer__text {
+    text-align: left;
+  }
+  .footer__text {
+    margin-top: 1.25rem;
+  }
+  .footer__social {
+    justify-content: flex-start;
+    margin: unset;
+    width: auto;
+    gap: 1.25em;
+  }
+  .footer__contact {
+    width: 50%;
+  }
+  .footer__picture {
+    width: 48%;
+  }
 }
 @media (min-width: 850px) {
   .header {
@@ -350,6 +478,13 @@ body {
 
   .about {
     justify-content: space-between;
+  }
+
+  .footer {
+    padding-bottom: 2.5em;
+  }
+  .footer__picture {
+    width: 45%;
   }
 }
 

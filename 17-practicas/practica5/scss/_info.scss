@@ -1,5 +1,34 @@
 .info {
-  --p-container: 5rem 0;
+  --p-container: 5rem 0 8rem;
+  position: relative;
+
+  background-color: #e5e5f7;
+  opacity: 1;
+  background-image: radial-gradient(#444cf7 0.5px, transparent 0.5px),
+    radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% var(--angle-info),
+      50% 100%,
+      0 var(--angle-info)
+    );
+    background-color: #fff;
+    top: 0;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 10;
+  }
 
   &__card {
     background-color: #444cf7;
