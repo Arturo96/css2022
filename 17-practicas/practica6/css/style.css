@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-menu: #1a202c;
+  --white: #fff;
+  --h-header: 4.4rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  background-color: var(--bg-menu);
+  height: var(--h-header);
+  color: var(--white);
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  position: fixed;
+  background-color: #000;
+  top: var(--h-header);
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  transform: translateX(100%);
+  transition: transform 0.5s;
+  list-style: none;
+}
+.menu__arrow {
+  transition: transform 0.3s;
+  transform: rotate(-90deg);
+}
+.menu__link {
+  display: block;
+  padding: 1.5em 1.85em;
+  color: inherit;
+  text-decoration: none;
+}
+.menu__link:active, .menu__link:hover {
+  background-color: #5e7094;
+}
+.menu__text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__toggle {
+  padding-right: 0.85rem;
+}
+.menu__icon {
+  display: block;
+  width: 36px;
+}
+
+.submenu {
+  list-style: none;
+  overflow: hidden;
+  transition: height 0.3s;
+  height: 0;
+}
+.submenu__item {
+  margin-left: 2rem;
+  border-left: 1px solid #798499;
+}
+
+.rotate {
+  transform: rotate(0);
+}
+
+.show {
+  transform: translateX(0);
+}
+
+@media (min-width: 800px) {
+  .menu {
+    position: static;
+    width: auto;
+    max-width: unset;
+    transform: none;
+    transition: none;
+    background-color: transparent;
+    display: flex;
+  }
+  .menu__item {
+    position: relative;
+  }
+  .menu__toggle {
+    display: none;
+  }
+  .menu__text {
+    justify-content: flex-start;
+  }
+
+  .submenu {
+    background-color: #000;
+    height: auto;
+    overflow: visible;
+    position: absolute;
+    top: var(--h-header);
+    left: -2rem;
+    width: 125%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.3s;
+    z-index: -1;
+  }
+  .submenu__item {
+    margin-left: 0;
+    border-left: none;
+  }
+
+  .menu__link--dropdown:hover + .submenu {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
