@@ -130,6 +130,10 @@ body {
   .menu__link--dropdown:hover + .submenu {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
+
+  .menu__link--dropdown:hover .menu__arrow {
+    transform: rotate(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -147,4 +147,8 @@ body {
     // transform: translateY(0);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
+
+  .menu__link--dropdown:hover .menu__arrow {
+    transform: rotate(0);
+  }
 }
