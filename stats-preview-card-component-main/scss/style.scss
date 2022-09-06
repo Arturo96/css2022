@@ -34,6 +34,7 @@ img {
 }
 
 .card {
+  margin-top: 3rem;
   background-color: var(--bg-card);
   width: 90%;
   max-width: 1200px;
@@ -58,6 +59,9 @@ img {
 
   &__img {
     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__texts {
@@ -91,5 +95,57 @@ img {
     color: var(--color-h);
     letter-spacing: 1px;
     font-family: var(--font-secondary);
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &__followers {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__texts {
+      padding: 2rem;
+      text-align: left;
+    }
+
+    &__picture {
+      width: 50%;
+    }
+
+    &__texts {
+      align-self: center;
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  .card {
+    &__picture,
+    &__texts {
+      width: 50%;
+    }
+
+    &__title {
+      font-size: 38px;
+      line-height: 1.25;
+    }
+
+    &__text {
+      margin-top: 2rem;
+    }
+
+    &__texts {
+      padding: 0 5rem;
+    }
+
+    &__followers {
+      margin-top: 4rem;
+    }
   }
 }
