@@ -25,11 +25,17 @@
   <body>
     <article class="card">
       <figure class="card__picture">
-        <img
-          src="images/image-header-mobile.jpg"
-          alt="Image"
-          class="card__img"
-        />
+        <picture>
+          <source
+            srcset="images/image-header-desktop.jpg"
+            media="(min-width: 480px)"
+          />
+          <img
+            src="images/image-header-mobile.jpg"
+            alt="Image"
+            class="card__img"
+          />
+        </picture>
       </figure>
       <section class="card__texts">
         <h1 class="card__title">
