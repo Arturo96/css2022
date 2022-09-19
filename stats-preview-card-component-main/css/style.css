@@ -41,19 +41,10 @@ img {
   overflow: hidden;
 }
 .card__picture {
-  position: relative;
-}
-.card__picture::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: var(--violet-light);
-  position: absolute;
-  left: 0;
-  top: 0;
+  background-color: var(--violet);
 }
 .card__img {
+  mix-blend-mode: multiply;
   display: block;
   width: 100%;
   height: 100%;

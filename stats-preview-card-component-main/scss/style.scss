@@ -43,21 +43,11 @@ img {
   overflow: hidden;
 
   &__picture {
-    position: relative;
-
-    &::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: var(--violet-light);
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
+    background-color: var(--violet);
   }
 
   &__img {
+    mix-blend-mode: multiply;
     display: block;
     width: 100%;
     height: 100%;
