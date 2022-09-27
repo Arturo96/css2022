@@ -47,8 +47,9 @@ img {
   padding-bottom: 2em;
 }
 .card__img {
-  margin: -3rem auto 0;
+  margin: calc(-3rem - 5px) auto 0;
   display: block;
+  background-color: #fff;
   border-radius: 50%;
   border: 5px solid #fff;
 }
