@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>PokeAPI</title>
+  </head>
+  <body>
+    <template id="template">
+      <article class="card">
+        <div class="card__pattern"></div>
+        <div class="card__body">
+          <img src="images/image-victor.jpg" alt="Victor" class="card__img" />
+          <h2 class="card__author">
+            Victor Crest <span class="card__age">26</span>
+          </h2>
+          <h3 class="card__place">London</h3>
+        </div>
+        <div class="card__footer">
+          <div class="card__followers">
+            <div class="card__number attack">80K</div>
+            <div class="card__topic">Ataque</div>
+          </div>
+
+          <div class="card__likes">
+            <div class="card__number special-attack">803K</div>
+            <div class="card__topic">Ataque Especial</div>
+          </div>
+
+          <div class="card__photos">
+            <div class="card__number defense">1.4K</div>
+            <div class="card__topic">Defensa</div>
+          </div>
+        </div>
+      </article>
+    </template>
+    <script src="index.js"></script>
+  </body>
+</html>
