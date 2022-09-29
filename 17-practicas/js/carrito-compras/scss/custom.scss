@@ -1,0 +1,28 @@
+$info: #17a2b8;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+.cards {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, 175px);
+  gap: 1.75em;
+}
+
+.tbody .btn {
+  color: #fff;
+}
+
+.cart {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.total {
+  font-weight: bold;
+}
+
+.final-row {
+  border-bottom: transparent;
+}
