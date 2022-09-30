@@ -10,19 +10,34 @@ const existeProducto = (nombre) => {
   return false;
 };
 
+const incrementar = (productName) => {
+  // const producto = carritoCompras.find((p) => p.nombre === productName);
+  // producto.cantidad++;
+  carritoCompras = carritoCompras.map((p) => {
+    if (p.nombre === productName) {
+      p.cantidad = p.cantidad + 1;
+    }
+    return p;
+  });
+};
+
+const decrementar = (productName) => {
+  const producto = carritoCompras.find((p) => p.nombre === productName);
+  producto.cantidad--;
+
+  if (producto.cantidad === 0) {
+    carritoCompras = carritoCompras.filter((p) => p.nombre !== productName);
+  }
+
+  pintarCarrito();
+};
+
 const agregarProducto = (card) => {
   const productName =
     card.previousElementSibling.previousElementSibling.textContent;
 
   if (existeProducto(productName)) {
-    // const producto = carritoCompras.find((p) => p.nombre === productName);
-    // producto.cantidad++;
-    carritoCompras = carritoCompras.map((p) => {
-      if (p.nombre === productName) {
-        p.cantidad = p.cantidad + 1;
-      }
-      return p;
-    });
+    incrementar(productName);
   } else {
     const productPrice = Number(
       card.previousElementSibling.textContent.slice(2)
@@ -53,6 +68,8 @@ const pintarCarrito = () => {
     clone.querySelector(".item").textContent = p.nombre;
     clone.querySelector(".cantidad").textContent = p.cantidad;
     clone.querySelector(".precio").textContent = p.precio;
+    clone.querySelector(".increment").dataset.name = p.nombre;
+    clone.querySelector(".decrement").dataset.name = p.nombre;
     fragment.appendChild(clone);
   });
 
@@ -77,20 +94,30 @@ const pintarCarrito = () => {
     );
 
     cloneFooter.querySelector(".cantidadTotal").textContent = cantidadTotal;
-    cloneFooter.querySelector(".precioTotal").textContent = precioTotal;
+    cloneFooter.querySelector(".precioTotal").textContent = `$ ${precioTotal}`;
   }
 
   tfoot.innerHTML = "";
   tfoot.appendChild(cloneFooter);
 };
 
-d.addEventListener("click", (e) => {
-  if (e.target.matches(".btn-dark")) {
-    agregarProducto(e.target);
+d.addEventListener("click", ({ target }) => {
+  if (target.matches(".btn-dark")) {
+    agregarProducto(target);
   }
 
-  if (e.target.matches(".empty")) {
+  if (target.matches(".empty")) {
     carritoCompras = [];
+    pintarCarrito();
+  }
+
+  if (target.matches(".increment")) {
+    incrementar(target.dataset.name);
+    pintarCarrito();
+  }
+
+  if (target.matches(".decrement")) {
+    decrementar(target.dataset.name);
     pintarCarrito();
   }
 });
