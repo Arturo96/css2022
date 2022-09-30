@@ -105,8 +105,8 @@
               <th scope="col">Total</th>
             </tr>
           </thead>
-          <tbody class="tbody"></tbody>
-          <tfoot>
+          <tbody id="tbody" class="tbody"></tbody>
+          <tfoot id="tfoot">
             <tr class="final-row">
               <th scope="row" colspan="5">
                 Carrito vacío - comience a comprar!
@@ -118,25 +118,30 @@
 
       <template id="templateBody">
         <tr>
-          <th scope="row">1</th>
-          <td>Café</td>
-          <td>1</td>
+          <th class="id" scope="row">1</th>
+          <td class="item">Café</td>
+          <td class="cantidad">1</td>
           <td>
             <button class="btn btn-info btn-sm">+</button>
             <button class="btn btn-danger btn-sm">-</button>
           </td>
-          <td>500</td>
+          <td class="precio">500</td>
         </tr>
       </template>
 
-      <template id="templateFooter">
+      <template id="templateFooterTotal">
         <tr class="final-row">
           <th scope="row" colspan="2">Total productos</th>
-          <td>1</td>
+          <td class="cantidadTotal">1</td>
           <td>
-            <button class="btn btn-danger btn-sm">Vaciar todo</button>
+            <button class="btn btn-danger btn-sm empty">Vaciar todo</button>
           </td>
-          <td class="total">500</td>
+          <td class="precioTotal">500</td>
+        </tr>
+      </template>
+      <template id="templateFooterEmpty">
+        <tr class="final-row">
+          <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
         </tr>
       </template>
     </div>
