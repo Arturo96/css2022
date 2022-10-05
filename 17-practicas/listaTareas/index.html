@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Lista de Tareas</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center my-5">ToDo App</h1>
+
+      <form id="form" class="mb-3">
+        <input
+          id="input"
+          class="form-control"
+          type="text"
+          placeholder="Ingrese tarea"
+          aria-label="Ingrese tarea"
+        />
+        <button type="submit" class="btn btn-primary w-100 mt-3">
+          Agregar
+        </button>
+      </form>
+
+      <section class="tareas" id="tareas"></section>
+    </div>
+
+    <template id="templateTareasEmpty">
+      <div class="alert alert-secondary text-center" role="alert">
+        No hay tareas pendientes 😍
+      </div>
+    </template>
+
+    <template id="templateTareas">
+      <div class="tarea alert alert-primary" role="alert">
+        <p class="my-0">A simple primary alert—check it out!</p>
+        <div class="icons">
+          <img
+            class="icon check"
+            src="assets/circle-check-solid.svg"
+            alt="Check"
+          />
+          <img
+            class="icon minus"
+            src="assets/circle-minus-solid.svg"
+            alt="Minus"
+          />
+        </div>
+      </div>
+    </template>
+
+    <script src="index.js"></script>
+  </body>
+</html>
