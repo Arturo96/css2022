@@ -2,7 +2,7 @@ const d = document;
 
 const tareas = JSON.parse(localStorage.getItem("tareas")) || {};
 
-let id = 0;
+let id = Date.now();
 
 const form = d.getElementById("form"),
   fragment = d.createDocumentFragment(),
