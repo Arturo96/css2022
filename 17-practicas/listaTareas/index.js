@@ -56,23 +56,23 @@ d.addEventListener("click", ({ target }) => {
   }
 });
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const input = d.getElementById("input").value.trim();
+
+  if (!input.length) return;
+
+  const tarea = {
+    id: ++id,
+    desc: input,
+    completed: false,
+  };
+
+  tareas[id] = { ...tarea };
+  pintarTareas();
+});
+
 d.addEventListener("DOMContentLoaded", () => {
   pintarTareas();
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const input = d.getElementById("input").value.trim();
-
-    if (!input.length) return;
-
-    const tarea = {
-      id: ++id,
-      desc: input,
-      completed: false,
-    };
-
-    tareas[id] = { ...tarea };
-    pintarTareas();
-  });
 });
