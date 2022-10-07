@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --dark-bg: hsl(207, 26%, 17%);
+  --light-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  font-size: 14px;
+
+  --h1-size: 1.25rem;
+  --header-h: 7rem;
+  --shadow: 0 1px 5px #ccc;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  min-height: 100vh;
+  background-color: var(--very-light-gray);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header {
+  height: var(--header-h);
+  box-shadow: var(--shadow);
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.main-title {
+  font-size: var(--h1-size);
+}
+
+.dark-mode {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 0.75em;
+  cursor: pointer;
+
+  &-img {
+    transform: rotate(-30deg);
+    width: 20px;
+  }
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.form {
+  display: grid;
+  gap: 2em;
+}
+
+.input {
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: var(--shadow);
+  padding: 1.2em;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.busqueda {
+  width: 100%;
+  max-width: 500px;
+  color: var(--dark-gray);
+}
+
+.select {
+  width: 200px;
+  font-weight: 600;
+}
+
+option {
+  font-weight: inherit;
+}
+
+.cards {
+  display: grid;
+  row-gap: 5rem;
+
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.card {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 350px;
+  background-color: var(--white);
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+
+  &__img {
+    display: block;
+  }
+
+  &__texts {
+    padding: 2em 1.5em 3em;
+  }
+
+  &__features {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.5em;
+  }
+
+  &__feature {
+    font-weight: 600;
+
+    span {
+      font-weight: 300;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --header-h: 5rem;
+    --h1-size: 1.75rem;
+  }
+
+  .form {
+    display: flex;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: space-between;
+  }
+
+  .card {
+    width: unset;
+    margin: unset;
+    max-width: unset;
+  }
+}
