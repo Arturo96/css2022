@@ -9,6 +9,8 @@
   let queryCountry = "",
     queryRegion = false;
 
+  let allCountries = [];
+
   const filterCountries = (countries) => {
     const countriesFiltered = countries.filter((c) =>
       c.name.common.toLowerCase().includes(queryCountry.toLowerCase())
@@ -66,15 +68,23 @@
       const res = await fetch(URL);
       data = await res.json();
 
-      filterCountries(data);
+      allCountries = data;
+
+      console.log(allCountries.filter((c) => c.region === "Americas"));
+
+      filterCountries(allCountries);
     } catch (error) {
       console.error(error);
     }
   };
 
+  d.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+  });
+
   busqueda.addEventListener("keyup", ({ target }) => {
     queryCountry = target.value.trim();
-    fetchData();
+    filterCountries(allCountries);
   });
 
   selectPais.addEventListener("change", ({ target }) => {
