@@ -1,26 +1,35 @@
 (() => {
   const d = document,
     busqueda = d.getElementById("busqueda"),
+    form = d.getElementById("form"),
     selectPais = d.getElementById("selectPais"),
     fragment = d.createDocumentFragment(),
     cards = d.getElementById("cards"),
+    darkButton = d.getElementById("darkButton"),
     templateCard = d.getElementById("templateCard").content;
 
   let queryCountry = "",
     queryRegion = false;
 
-  let allCountries = [];
+  let countries = JSON.parse(localStorage.getItem("countries")) || [],
+    countriesByRegion = [];
 
   const filterCountries = (countries) => {
     const countriesFiltered = countries.filter((c) =>
-      c.name.common.toLowerCase().includes(queryCountry.toLowerCase())
+      c.name.toLowerCase().includes(queryCountry.toLowerCase())
     );
 
-    sortCountries(countriesFiltered);
+    drawCards(countriesFiltered);
   };
 
-  const sortCountries = (countries) => {
-    const countriesSorted = countries.map((c) => ({
+  const filterCountriesByRegion = () => {
+    countriesByRegion = countries.filter((c) => c.region === queryRegion);
+
+    filterCountries(countriesByRegion);
+  };
+
+  const sortCountries = () => {
+    countries = countries.map((c) => ({
       name: c.name.common,
       flag: c.flags["svg"],
       population: c.population.toLocaleString("en-US"),
@@ -28,7 +37,7 @@
       capital: c.capital ? c.capital[0] : "Sin definir",
     }));
 
-    countriesSorted.sort((a, b) => {
+    countries.sort((a, b) => {
       const nameA = a.name.toUpperCase(); // ignore upper and lowercase
       const nameB = b.name.toUpperCase(); // ignore upper and lowercase
       if (nameA < nameB) return -1;
@@ -38,7 +47,9 @@
       return 0;
     });
 
-    drawCards(countriesSorted);
+    localStorage.setItem("countries", JSON.stringify(countries));
+
+    drawCards(countries);
   };
 
   const drawCards = (countries) => {
@@ -60,35 +71,40 @@
   };
 
   const fetchData = async () => {
-    const endpoint = queryRegion ? `region/${queryRegion}` : "all";
-
-    const URL = `https://restcountries.com/v3.1/${endpoint}`;
+    const URL = `https://restcountries.com/v3.1/all`;
 
     try {
       const res = await fetch(URL);
-      data = await res.json();
 
-      allCountries = data;
+      countries = await res.json();
 
-      console.log(allCountries.filter((c) => c.region === "Americas"));
-
-      filterCountries(allCountries);
+      sortCountries();
     } catch (error) {
       console.error(error);
     }
   };
 
   d.addEventListener("DOMContentLoaded", () => {
-    fetchData();
+    if (countries.length) drawCards(countries);
+    else fetchData();
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
   });
 
   busqueda.addEventListener("keyup", ({ target }) => {
     queryCountry = target.value.trim();
-    filterCountries(allCountries);
+    if (queryRegion) filterCountries(countriesByRegion);
+    else filterCountries(countries);
   });
 
   selectPais.addEventListener("change", ({ target }) => {
     queryRegion = target.value;
-    fetchData();
+    filterCountriesByRegion();
+  });
+
+  darkButton.addEventListener("click", () => {
+    d.body.classList.toggle("dark");
   });
 })();

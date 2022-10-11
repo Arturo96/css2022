@@ -25,6 +25,7 @@
 body {
   font-family: "Nunito Sans", sans-serif;
   min-height: 100vh;
+  transition: all 0.7s;
   background-color: var(--very-light-gray);
 }
 
@@ -40,6 +41,7 @@ img {
 }
 
 .header {
+  background-color: var(--white);
   height: var(--header-h);
   box-shadow: var(--shadow);
 
@@ -69,7 +71,7 @@ img {
 }
 
 .main {
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 
 .form {
@@ -125,7 +127,7 @@ option {
   row-gap: 5rem;
 
   justify-content: center;
-  margin-top: 4rem;
+  margin: 4rem 0;
 }
 
 .card {
@@ -162,6 +164,34 @@ option {
     }
   }
 }
+
+// Dark mode
+
+.dark {
+  --shadow: 0 1px 5px var(--light-text);
+  color: var(--very-light-gray);
+  background-color: var(--dark-bg);
+
+  .dark-mode-img {
+    transition: all 0.7s;
+    fill: var(--very-light-gray);
+  }
+
+  .header {
+    background-color: var(--dark-blue);
+  }
+
+  .card,
+  .form__search,
+  .form__select {
+    background-color: var(--dark-bg);
+  }
+
+  .form__select {
+    color: var(--dark-gray);
+  }
+}
+
 @media screen and (min-width: 768px) {
   :root {
     --header-h: 5rem;
@@ -175,7 +205,7 @@ option {
   }
 
   .cards {
-    grid-template-columns: repeat(auto-fit, 275px);
+    grid-template-columns: repeat(auto-fit, 285px);
     justify-content: space-between;
   }
 
