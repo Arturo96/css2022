@@ -75,31 +75,49 @@ img {
 .form {
   display: grid;
   gap: 2em;
-}
 
-.input {
-  display: block;
-  border: none;
-  outline: none;
-  box-shadow: var(--shadow);
-  padding: 1.2em;
-  border-radius: 5px;
-  font-family: inherit;
-}
+  &__group {
+    width: 100%;
+    position: relative;
+    max-width: 500px;
+  }
 
-.busqueda {
-  width: 100%;
-  max-width: 500px;
-  color: var(--dark-gray);
-}
+  &__input {
+    display: block;
+    border: none;
+    outline: none;
+    box-shadow: var(--shadow);
+    padding: 1.2em;
+    border-radius: 5px;
+    font-family: inherit;
+  }
 
-.select {
-  width: 200px;
-  font-weight: 600;
+  &__search {
+    width: 100%;
+    color: var(--dark-gray);
+    padding: 1.2em 5em;
+
+    &::placeholder {
+      color: var(--dark-gray);
+    }
+  }
+
+  &__select {
+    width: 200px;
+    font-weight: 600;
+  }
 }
 
 option {
   font-weight: inherit;
+}
+
+.search-icon {
+  width: 17px;
+  position: absolute;
+  top: 0;
+  transform: translateY(15px);
+  left: 27px;
 }
 
 .cards {
@@ -111,9 +129,9 @@ option {
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 300px;
   background-color: var(--white);
   overflow: hidden;
   border-radius: 5px;
@@ -121,6 +139,9 @@ option {
 
   &__img {
     display: block;
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
   }
 
   &__texts {
@@ -154,7 +175,7 @@ option {
   }
 
   .cards {
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 275px);
     justify-content: space-between;
   }
 

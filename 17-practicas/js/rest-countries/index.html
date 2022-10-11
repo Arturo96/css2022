@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rest Countries</title>
+    <title>Rest Countries Web Page</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -21,79 +21,55 @@
     <main class="main">
       <div class="container">
         <form class="form">
-          <input
-            type="search"
-            placeholder="Search for a country..."
-            class="input busqueda"
-          />
-          <select title="pais" id="pais" class="input select">
+          <div class="form__group">
+            <input
+              id="busqueda"
+              type="search"
+              placeholder="Search for a country..."
+              class="form__input form__search"
+            />
+            <label for="busqueda">
+              <img
+                class="search-icon"
+                src="assets/search.svg"
+                alt="Search Icon"
+              />
+            </label>
+          </div>
+          <select title="pais" id="selectPais" class="form__input form__select">
             <option hidden selected>Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="America">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
+            <option value="africa">Africa</option>
+            <option value="ame">America</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
           </select>
         </form>
 
-        <section class="cards">
-          <article class="card">
-            <img src="assets/pe.svg" alt="Perú" class="card__img" />
-            <div class="card__texts">
-              <h2 class="card__title">Germany</h2>
-              <div class="card__features">
-                <h3 class="card__feature">
-                  Population: <span>81.770.900</span>
-                </h3>
-                <h3 class="card__feature">Region: <span>Europe</span></h3>
-                <h3 class="card__feature">Capital: <span>Berlin</span></h3>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="assets/pe.svg" alt="Perú" class="card__img" />
-            <div class="card__texts">
-              <h2 class="card__title">Germany</h2>
-              <div class="card__features">
-                <h3 class="card__feature">
-                  Population: <span>81.770.900</span>
-                </h3>
-                <h3 class="card__feature">Region: <span>Europe</span></h3>
-                <h3 class="card__feature">Capital: <span>Berlin</span></h3>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="assets/pe.svg" alt="Perú" class="card__img" />
-            <div class="card__texts">
-              <h2 class="card__title">Germany</h2>
-              <div class="card__features">
-                <h3 class="card__feature">
-                  Population: <span>81.770.900</span>
-                </h3>
-                <h3 class="card__feature">Region: <span>Europe</span></h3>
-                <h3 class="card__feature">Capital: <span>Berlin</span></h3>
-              </div>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="assets/pe.svg" alt="Perú" class="card__img" />
-            <div class="card__texts">
-              <h2 class="card__title">Germany</h2>
-              <div class="card__features">
-                <h3 class="card__feature">
-                  Population: <span>81.770.900</span>
-                </h3>
-                <h3 class="card__feature">Region: <span>Europe</span></h3>
-                <h3 class="card__feature">Capital: <span>Berlin</span></h3>
-              </div>
-            </div>
-          </article>
-        </section>
+        <section id="cards" class="cards"></section>
       </div>
     </main>
+
+    <template id="templateCard">
+      <article class="card">
+        <img src="assets/pe.svg" alt="Perú" class="card__img" />
+        <div class="card__texts">
+          <h2 class="card__title">Germany</h2>
+          <div class="card__features">
+            <h3 class="card__feature">
+              Population: <span class="population">81.770.900</span>
+            </h3>
+            <h3 class="card__feature">
+              Region: <span class="region">Europe</span>
+            </h3>
+            <h3 class="card__feature">
+              Capital: <span class="capital">Berlin</span>
+            </h3>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="index.js"></script>
   </body>
 </html>

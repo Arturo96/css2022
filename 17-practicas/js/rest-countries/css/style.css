@@ -71,8 +71,12 @@ img {
   display: grid;
   gap: 2em;
 }
-
-.input {
+.form__group {
+  width: 100%;
+  position: relative;
+  max-width: 500px;
+}
+.form__input {
   display: block;
   border: none;
   outline: none;
@@ -81,20 +85,29 @@ img {
   border-radius: 5px;
   font-family: inherit;
 }
-
-.busqueda {
+.form__search {
   width: 100%;
-  max-width: 500px;
+  color: var(--dark-gray);
+  padding: 1.2em 5em;
+}
+.form__search::placeholder {
   color: var(--dark-gray);
 }
-
-.select {
+.form__select {
   width: 200px;
   font-weight: 600;
 }
 
 option {
   font-weight: inherit;
+}
+
+.search-icon {
+  width: 17px;
+  position: absolute;
+  top: 0;
+  transform: translateY(15px);
+  left: 27px;
 }
 
 .cards {
@@ -105,9 +118,9 @@ option {
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
-  max-width: 350px;
+  max-width: 300px;
   background-color: var(--white);
   overflow: hidden;
   border-radius: 5px;
@@ -115,6 +128,9 @@ option {
 }
 .card__img {
   display: block;
+  width: 100%;
+  height: 185px;
+  object-fit: cover;
 }
 .card__texts {
   padding: 2em 1.5em 3em;
@@ -144,7 +160,7 @@ option {
   }
 
   .cards {
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 275px);
     justify-content: space-between;
   }
 
