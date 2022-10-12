@@ -9,7 +9,8 @@
     templateCard = d.getElementById("templateCard").content;
 
   let queryCountry = "",
-    queryRegion = false;
+    queryRegion = false,
+    isDark = localStorage.getItem("isDark") || "no";
 
   let countries = JSON.parse(localStorage.getItem("countries")) || [],
     countriesByRegion = [];
@@ -85,6 +86,7 @@
   };
 
   d.addEventListener("DOMContentLoaded", () => {
+    if (isDark === "yes") d.body.classList.add("dark");
     if (countries.length) drawCards(countries);
     else fetchData();
   });
@@ -106,5 +108,7 @@
 
   darkButton.addEventListener("click", () => {
     d.body.classList.toggle("dark");
+    isDark = isDark === "no" ? "yes" : "no";
+    localStorage.setItem("isDark", isDark);
   });
 })();
