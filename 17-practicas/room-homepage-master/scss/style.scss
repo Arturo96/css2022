@@ -24,7 +24,8 @@ img {
 }
 
 .container {
-  width: 90%;
+  padding: 2.5rem 0;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -37,12 +38,12 @@ img {
   color: var(--white);
 
   &__img {
+    width: 100%;
     display: block;
     position: relative;
   }
 
   &__container {
-    padding-top: 2.5rem;
     position: absolute;
     top: 0;
     left: 0;
@@ -93,6 +94,29 @@ img {
 .burger {
   &--hidden {
     opacity: 0;
+  }
+}
+
+.main {
+  &__container {
+    padding-bottom: 5rem;
+  }
+
+  &__title {
+    font-size: 2.25em;
+    font-weight: 600;
+  }
+
+  &__text {
+    margin: 1.25rem 0 2rem;
+    color: var(--dark-gray);
+    line-height: 1.35;
+  }
+
+  &__cta {
+    text-decoration: none;
+    color: inherit;
+    letter-spacing: 10px;
   }
 }
 

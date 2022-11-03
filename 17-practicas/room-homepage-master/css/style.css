@@ -23,7 +23,8 @@ img {
 }
 
 .container {
-  width: 90%;
+  padding: 2.5rem 0;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,11 +37,11 @@ img {
   color: var(--white);
 }
 .header__img {
+  width: 100%;
   display: block;
   position: relative;
 }
 .header__container {
-  padding-top: 2.5rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -83,6 +84,24 @@ img {
 
 .burger--hidden {
   opacity: 0;
+}
+
+.main__container {
+  padding-bottom: 5rem;
+}
+.main__title {
+  font-size: 2.25em;
+  font-weight: 600;
+}
+.main__text {
+  margin: 1.25rem 0 2rem;
+  color: var(--dark-gray);
+  line-height: 1.35;
+}
+.main__cta {
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 10px;
 }
 
 @media (min-width: 1000px) {
