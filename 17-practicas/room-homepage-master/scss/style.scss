@@ -17,6 +17,9 @@
 
 body {
   font-family: "League Spartan", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
 img {
@@ -36,6 +39,8 @@ img {
 
 .header {
   color: var(--white);
+  grid-column: 1/-1;
+  grid-row: 1/-1;
 
   &__img {
     width: 100%;
@@ -120,14 +125,69 @@ img {
   }
 }
 
+.pagination {
+  width: 125px;
+  height: 70px;
+  background-color: var(--black);
+  display: flex;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  justify-self: end;
+  align-self: end;
+  z-index: 10;
+}
+
+.arrow {
+  text-decoration: none;
+  flex: auto;
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    background-color: var(--very-dark-gray);
+  }
+
+  &__img {
+    width: 12px;
+  }
+}
+
+.about {
+  &__img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__title {
+    letter-spacing: 5px;
+  }
+
+  &__text {
+    margin-top: 1.5rem;
+    color: var(--dark-gray);
+    line-height: 1.35;
+  }
+}
+
 @media (min-width: 1000px) {
+  :root {
+    --nav-h: 3rem;
+  }
+
+  body {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   .nav {
     position: static;
     width: auto;
-    height: auto;
     transform: unset;
     background-color: transparent;
     color: unset;
+
+    &__link {
+      font-weight: 500;
+    }
   }
 
   .burger,
@@ -136,13 +196,66 @@ img {
   }
 
   .header {
+    grid-column: 1/4;
+
     &__img {
       position: static;
     }
 
     &__container {
+      width: 92%;
       justify-content: flex-start;
       gap: 3em;
     }
+  }
+
+  .main,
+  .pagination {
+    grid-column: 4/-1;
+    grid-row: 1/-1;
+  }
+
+  .main {
+    display: grid;
+    place-content: center;
+
+    &__container {
+      padding-top: 0;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    &__title {
+      font-weight: 700;
+    }
+  }
+
+  .pagination {
+    width: 38%;
+    justify-self: start;
+  }
+
+  .about {
+    display: grid;
+    grid-column: 1/-1;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+
+    &__img {
+      grid-column: span 1;
+      grid-row: span 1;
+      height: 100%;
+    }
+
+    &__texts {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+  }
+}
+
+@media (min-width: 1250px) {
+  .main__title {
+    font-size: 2.75em;
   }
 }
