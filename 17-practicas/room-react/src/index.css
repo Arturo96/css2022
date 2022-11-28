@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.link {
+  @apply pb-1 flex justify-center relative after:absolute after:content-[''] after:bottom-0 after:bg-white after:w-1/2 after:scale-x-0 after:transition-transform hover:after:h-[1px] hover:after:scale-x-100;
+}

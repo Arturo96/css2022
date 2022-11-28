@@ -105,6 +105,8 @@ img {
 .main {
   &__container {
     padding-bottom: 5rem;
+    // opacity: 0;
+    // animation: fade 1s forwards;
   }
 
   &__title {
@@ -166,6 +168,12 @@ img {
     margin-top: 1.5rem;
     color: var(--dark-gray);
     line-height: 1.35;
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
   }
 }
 
