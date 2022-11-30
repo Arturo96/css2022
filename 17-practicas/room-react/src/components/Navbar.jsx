@@ -23,8 +23,10 @@ const Navbar = () => {
 
       <div
         ref={menuRef}
-        className="px-8 translate-x-full lg:translate-x-0 transition-transform duration-300 lg:pt-2 lg:px-0 flex items-center justify-between lg:gap-x-10 fixed top-0 left-0 z-10 lg:static bg-white 
-      lg:bg-transparent text-black lg:text-white h-28 lg:h-auto w-full lg:w-auto"
+        className="px-8 translate-x-full lg:translate-x-0 transition-transform duration-300
+        lg:pt-2 lg:px-0 flex items-center justify-between lg:gap-x-10 fixed top-0 left-0 z-10
+        lg:static bg-white lg:bg-transparent text-black 
+        lg:text-white h-28 lg:h-auto w-full lg:w-auto"
       >
         <IconMenuClose onClick={handleClickMenu} className="lg:hidden" />
         <a className="link" href="#">

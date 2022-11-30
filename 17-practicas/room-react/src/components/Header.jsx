@@ -1,14 +1,29 @@
+import { useState } from "react";
 import ImgHero1 from "../assets/desktop-image-hero-1.jpg";
+import ImgHero2 from "../assets/desktop-image-hero-2.jpg";
+import ImgHero3 from "../assets/desktop-image-hero-3.jpg";
 import AngleLeft from "../assets/icon-angle-left.svg";
 import AngleRight from "../assets/icon-angle-right.svg";
 import Arrow from "./Arrow";
 
 const Header = () => {
+  const images = [ImgHero1, ImgHero2, ImgHero3];
+
+  const [indexImage, setIndexImage] = useState(0);
+
+  const handlePrevImage = () => {
+    setIndexImage(indexImage === 0 ? images.length - 1 : indexImage - 1);
+  };
+
+  const handleNextImage = () => {
+    setIndexImage(indexImage === images.length - 1 ? 0 : indexImage + 1);
+  };
+
   return (
     <header className="grid grid-cols-3 lg:grid-cols-7 grid-rows-[300px_75px_10fr] lg:grid-rows-[400px_75px]">
       <img
         className="col-start-1 col-end-4 lg:col-start-1 lg:col-end-5 row-start-1 row-end-3 lg:row-start-1 lg:row-end-3 w-full h-full"
-        src={ImgHero1}
+        src={images[indexImage]}
         alt="Image Hero 1"
       />
       <article className="col-start-1 col-end-4 lg:col-start-5 lg:col-end-8 row-start-3 row-end-4 lg:row-start-1 lg:row-end-2 py-16 lg:py-4 xl:py-10 px-10 lg:px-20">
@@ -31,18 +46,20 @@ const Header = () => {
         </a>
       </article>
       <section className="flex col-start-3 col-end-4 lg:col-start-5 lg:col-end-6 row-start-2 row-end-3">
-        <a
-          className="flex-auto grid place-content-center bg-black hover:bg-gray-800"
-          href="#"
+        <figure
+          className="flex-auto grid place-content-center
+         bg-black hover:bg-gray-800 cursor-pointer"
+          onClick={handlePrevImage}
         >
           <img src={AngleLeft} alt="Angle Left" />
-        </a>
-        <a
-          className="flex-auto grid place-content-center bg-black hover:bg-gray-800"
-          href="#"
+        </figure>
+        <figure
+          className="flex-auto grid place-content-center
+         bg-black hover:bg-gray-800 cursor-pointer"
+          onClick={handleNextImage}
         >
           <img src={AngleRight} alt="Angle Right" />
-        </a>
+        </figure>
       </section>
     </header>
   );
