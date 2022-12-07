@@ -1,0 +1,56 @@
+import { useRef } from "react";
+import LinkPage from "./LinkPage";
+
+const Header = () => {
+  const navRef = useRef(null);
+
+  const handleNavOpen = () => {
+    navRef.current.classList.remove("-translate-x-full");
+  };
+
+  const handleNavClose = () => {
+    navRef.current.classList.add("-translate-x-full");
+  };
+
+  return (
+    <header className="font-kumbh flex items-center px-5 py-3">
+      <figure className="lg:hidden" onClick={handleNavOpen}>
+        <img src="src/assets/icon-menu.svg" alt="Cart icon" />
+      </figure>
+      <a href="#" className="ml-5">
+        <img src="src/assets/logo.svg" alt="Logo" />
+      </a>
+      <nav
+        className="fixed lg:static top-0 left-0 
+      w-52 h-full lg:w-auto lg:h-auto
+      bg-gray-200 lg:flex px-5 lg:px-0 py-4 lg:py-0 
+      font-bold lg:font-normal
+      -translate-x-full lg:translate-x-0 transition-transform duration-300"
+        ref={navRef}
+      >
+        <figure className="mb-8 lg:hidden" onClick={handleNavClose}>
+          <img
+            className="w-4"
+            src="src/assets/icon-close.svg"
+            alt="Icon Close"
+          />
+        </figure>
+        <LinkPage page="Collections" />
+        <LinkPage page="Men" />
+        <LinkPage page="Women" />
+        <LinkPage page="About" />
+        <LinkPage page="Contact" />
+      </nav>
+      <div className="flex items-center ml-auto gap-6">
+        <figure>
+          <img src="src/assets/icon-cart.svg" alt="Cart icon" />
+        </figure>
+        <figure>
+          <img className="w-7" src="src/assets/image-avatar.png" alt="Avatar" />
+        </figure>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
