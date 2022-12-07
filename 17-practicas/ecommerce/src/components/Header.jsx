@@ -2,14 +2,17 @@ import { useRef } from "react";
 import LinkPage from "./LinkPage";
 
 const Header = () => {
-  const navRef = useRef(null);
+  const navRef = useRef(null),
+    modalRef = useRef(null);
 
   const handleNavOpen = () => {
     navRef.current.classList.remove("-translate-x-full");
+    modalRef.current.classList.remove("hidden");
   };
 
   const handleNavClose = () => {
     navRef.current.classList.add("-translate-x-full");
+    modalRef.current.classList.add("hidden");
   };
 
   return (
@@ -21,9 +24,9 @@ const Header = () => {
         <img src="src/assets/logo.svg" alt="Logo" />
       </a>
       <nav
-        className="fixed lg:static top-0 left-0 
+        className="fixed z-10 lg:static top-0 left-0 
       w-52 h-full lg:w-auto lg:h-auto
-      bg-gray-200 lg:flex px-5 lg:px-0 py-4 lg:py-0 
+      bg-white lg:flex px-5 lg:px-0 py-4 lg:py-0 
       font-bold lg:font-normal
       -translate-x-full lg:translate-x-0 transition-transform duration-300"
         ref={navRef}
@@ -49,6 +52,10 @@ const Header = () => {
           <img className="w-7" src="src/assets/image-avatar.png" alt="Avatar" />
         </figure>
       </div>
+      <div
+        className="hidden lg:hidden fixed top-0 left-0 w-full h-full bg-black opacity-75"
+        ref={modalRef}
+      ></div>
     </header>
   );
 };
