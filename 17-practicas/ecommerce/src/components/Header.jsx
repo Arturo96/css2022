@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="lg:border-b-[1px] mx-auto max-w-5xl font-kumbh flex items-center lg:gap-14 px-5 lg:px-0 py-8">
+    <header className="lg:border-b-[1px] mx-auto max-w-5xl flex items-center lg:gap-14 px-5 lg:px-0 py-5 lg:py-8">
       <figure className="lg:hidden" onClick={handleNavOpen}>
         <img src="src/assets/icon-menu.svg" alt="Cart icon" />
       </figure>
@@ -26,7 +26,7 @@ const Header = () => {
       <nav
         className="fixed z-10 lg:static top-0 left-0 
       w-52 h-full lg:w-auto lg:h-auto
-      bg-white lg:flex px-5 lg:px-0 py-9 lg:py-0 
+      bg-white lg:flex px-5 lg:px-0 py-6 lg:py-0 
       font-bold lg:font-normal lg:gap-8
       -translate-x-full lg:translate-x-0 transition-transform duration-300"
         ref={navRef}
