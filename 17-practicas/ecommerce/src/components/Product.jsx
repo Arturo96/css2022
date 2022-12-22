@@ -1,6 +1,13 @@
+import { useState } from "react";
 import IconCart from "./IconCart";
 
 const Product = () => {
+  const [counter, setCounter] = useState(0);
+
+  const handleMinus = () => setCounter(counter === 0 ? counter : counter - 1);
+
+  const handlePlus = () => setCounter(counter + 1);
+
   return (
     <main>
       <section>
@@ -72,11 +79,11 @@ const Product = () => {
           </h4>
         </div>
         <div className="flex justify-between items-center mt-4 bg-customBlue-gray-light p-4 rounded-lg">
-          <figure>
+          <figure onClick={handleMinus}>
             <img src="src/assets/icon-minus.svg" alt="Icon Minus" />
           </figure>
-          <h3 className="font-bold">0</h3>
-          <figure>
+          <h3 className="font-bold">{counter}</h3>
+          <figure onClick={handlePlus}>
             <img src="src/assets/icon-plus.svg" alt="Icon Plus" />
           </figure>
         </div>
