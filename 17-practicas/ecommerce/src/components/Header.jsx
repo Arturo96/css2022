@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <header className="lg:border-b-[1px] mx-auto max-w-5xl flex items-center lg:gap-14 px-5 lg:px-0 py-5 lg:py-8">
+    <header className="lg:border-b-[1px] mx-auto lg:max-w-5xl xl:max-w-6xl flex items-center lg:gap-14 px-5 lg:px-0 py-5 lg:py-8">
       <figure className="lg:hidden" onClick={handleNavOpen}>
         <img src="src/assets/icon-menu.svg" alt="Cart icon" />
       </figure>
